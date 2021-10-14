@@ -2,11 +2,11 @@ import React from 'react'
 import { Container,Nav } from 'react-bootstrap'
 import Navbar from 'react-bootstrap/Navbar'
 
-function NavBar({ title, comprar, vender }) {
+function NavBar() {
     return (
         <Navbar bg="black" expand="lg">
             <Container fluid>
-                <Navbar.Brand className="text-light" href="#">{title}</Navbar.Brand>
+                <Navbar.Brand className="text-light" href="#">Busco Libro</Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" className="bg-danger opacity-75" />
                 <Navbar.Collapse id="navbarScroll">
                     <Nav
@@ -14,8 +14,8 @@ function NavBar({ title, comprar, vender }) {
                         style={{ maxHeight: '100px' }}
                         navbarScroll
                     >
-                        <Nav.Link className="text-light" href="#action1"><i class="bi bi-bag"></i>{comprar}</Nav.Link>
-                        <Nav.Link className="text-light" href="#action2">{vender}</Nav.Link>
+                        <Nav.Link className="text-light" href="#action1"><i class="bi bi-bag"></i>Comprar</Nav.Link>
+                        <Nav.Link className="text-light" href="#action2">Vender</Nav.Link>
                     </Nav>
                     <Nav className="justify-content-end me-xl-5" activeKey="/home">
                         <Nav.Item>
