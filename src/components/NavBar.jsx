@@ -12,18 +12,18 @@ function NavBar() {
                     <span className="navbar-toggler-icon"></span>
                 </button>
 
-                <div className="collapse navbar-collapse d-md-flex flex-md-row justify-content-md-center" id="navbarColor01">
-                    <ul className="navbar-nav me-auto ms-md-5">
+                <div className="collapse navbar-collapse d-lg-flex flex-lg-row justify-content-lg-center" id="navbarColor01">
+                    <ul className="navbar-nav me-auto ms-md-1 ms-lg-5">
                         <li className="nav-item">
-                            <a className="nav-link active fs-5" href="#">Comprar
+                            <a className="nav-link active fs-5 ms-lg-5" href="#">Comprar
                                 <span className="visually-hidden">(current)</span>
                             </a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link active  fs-5" href="#">Vender</a>
+                            <a className="nav-link active  fs-5  ms-lg-5" href="#">Vender</a>
                         </li>
                     </ul>
-                    <ul className="navbar-nav mt-2 me-auto ms-md-5 ps-md-5 d-flex flex-row justify-content-around">
+                    <ul className="navbar-nav mt-2 me-auto ms-md-1 ps-md-1 ms-xl-5 ps-xl-5 d-flex flex-row justify-content-around">
                         <li className="nav-item mb-2 ">
                             <button type="button" class="btn btn-outline-light ">Login</button>
                         </li>
