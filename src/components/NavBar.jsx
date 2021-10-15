@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
 
-
+/**Utilizando librerias bootstrap y bootswatch */
 
 function NavBar() {
     return (
@@ -12,29 +12,30 @@ function NavBar() {
                     <span className="navbar-toggler-icon"></span>
                 </button>
 
-                <div className="collapse navbar-collapse d-xl-flex " id="navbarColor01">
-                    <ul className="navbar-nav me-auto">
+                <div className="collapse navbar-collapse d-md-flex flex-md-row justify-content-md-center" id="navbarColor01">
+                    <ul className="navbar-nav me-auto ms-md-5">
                         <li className="nav-item">
-                            <a className="nav-link active" href="#">Comprar
+                            <a className="nav-link active fs-5" href="#">Comprar
                                 <span className="visually-hidden">(current)</span>
                             </a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Vender</a>
-                        </li>                        
+                            <a className="nav-link active  fs-5" href="#">Vender</a>
+                        </li>
                     </ul>
-                    <ul className="navbar-nav me-auto ms-md-5 ps-md-5">
-                        <li className="nav-item mb-2">
-                            <button type="button" class="btn btn-outline-dark">Login</button>
+                    <ul className="navbar-nav mt-2 me-auto ms-md-5 ps-md-5 d-flex flex-row justify-content-around">
+                        <li className="nav-item mb-2 ">
+                            <button type="button" class="btn btn-outline-light ">Login</button>
                         </li>
                         <li className="nav-item ms-md-2">
-                            <button type="button" class="btn btn-outline-dark">Sign in</button>
+                            <button type="button" class="btn btn-outline-light">Sign in</button>
                         </li>
-                    </ul>                  
+                    </ul>
                 </div>
-                           
+
+
             </div>
-            
+
         </nav>
     )
 }
