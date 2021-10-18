@@ -1,6 +1,10 @@
-import './App.css';
+//Importo el npm de bootswatch
+import "bootswatch/dist/quartz/bootstrap.min.css";
+
 //Traigo el componente navbar de NavBar.jsx
 import NavBar from './components/NavBar/NavBar';
+
+
 
 
 

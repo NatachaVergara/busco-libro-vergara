@@ -1,7 +1,4 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react'
-
-
 /**Utilizando librerias bootstrap y bootswatch */
 
 function NavBar() {
@@ -14,14 +11,20 @@ function NavBar() {
                 </button>
 
                 <div className="collapse navbar-collapse d-lg-flex flex-lg-row justify-content-lg-center" id="navbarColor01">
-                    <ul className="navbar-nav me-auto ms-md-1 ms-lg-5">
-                        <li className="nav-item">
-                            <a className="nav-link active fs-5 ms-lg-5" href="#">Comprar
-                                <span className="visually-hidden">(current)</span>
-                            </a>
+                    <ul className="navbar-nav me-auto ms-5 ps-3ms-md-1 ms-lg-5 ">
+                        <li className="nav-item dropdown ">
+                            <a className="nav-link dropdown-toggle me-sm-5" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Comprar</a>
+                            <div className="dropdown-menu">
+                                <a className="dropdown-item" href="#">Nuevos</a>
+                                <a className="dropdown-item" href="#">Usados</a>
+                            </div>
                         </li>
-                        <li className="nav-item">
-                            <a className="nav-link active  fs-5  ms-lg-5" href="#">Vender</a>
+                        <li className="nav-item dropdown">
+                            <a className="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Vender</a>
+                            <div className="dropdown-menu">
+                                <a className="dropdown-item" href="#">Nuevos</a>
+                                <a className="dropdown-item" href="#">Usados</a>
+                            </div>
                         </li>
                     </ul>
                     <ul className="navbar-nav mt-2 me-auto ms-md-1 ps-md-1 ms-xl-5 ps-xl-5 d-flex flex-row justify-content-around">
