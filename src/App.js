@@ -1,5 +1,8 @@
 import './App.css';
+//Traigo el componente navbar de NavBar.jsx
 import NavBar from './components/NavBar';
+
+
 
 function App() {
   return (
