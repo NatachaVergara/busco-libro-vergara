@@ -37,7 +37,7 @@ function NavBar() {
                             <li className="nav-item me-md-5">
                                 <button type="button" class="btn btn-outline-light ">Login</button>
                             </li>
-                            <li className="nav-item me-md-5">
+                            <li className="nav-item me-md-4">
                                 <button type="button" class="btn btn-outline-light">Sign in</button>
                             </li>
                         </ul>
