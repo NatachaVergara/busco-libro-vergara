@@ -9,8 +9,8 @@ function CartWidget() {
     }
 
     return (
-        <div  >
-            <i className="bi bi-cart4" style={cartStyles}></i>
+        <div >
+            <i className="bi bi-cart4 " style={cartStyles}></i>
         </div>
     )
 }
