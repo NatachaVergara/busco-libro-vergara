@@ -10,7 +10,7 @@ function App() {
     <div className="App">
       {/**Desarrollar un navbar dentro del componente navBar */}
       <NavBar />
-      <ItemListComponent />
+      <ItemListComponent titulo="Proximamente un listado del catálogo de libros"/>
     </div>
   );
 }
