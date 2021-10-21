@@ -3,7 +3,7 @@
 
 import CartWidget from "../CartWidget/CartWidget"
 
-function NavBar() {
+const  NavBar = () => {
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-primary ">
             <div className="container-fluid d-flex flex-md-row justify-content-between">
@@ -16,7 +16,7 @@ function NavBar() {
                     <div className="d-flex flex-column flex-md-row">
 
                         <ul className="navbar-nav me-md-5 pe-md-5">
-                            <li className="nav-item dropdown  me-md-5">
+                            <li className="nav-item dropdown  me-md-2">
                                 <a className="nav-link dropdown-toggle " data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Comprar</a>
                                 <div className="dropdown-menu">
                                     <a className="dropdown-item" href="#">Nuevos</a>

@@ -1,16 +1,18 @@
 
 
 
-function CartWidget() {
-    const cartStyles = {
-        color: "black",
-        fontSize: "2rem",
-      
-    }
+const CartWidget = () => {
+
 
     return (
         <div >
-            <i className="bi bi-cart4 " style={cartStyles}></i>
+            <button type="button"
+                className="btn btn-link text-decoration-none ms-xl-4">
+                <i className="bi bi-cart4 text-black fs-3 ">
+                    <span clasName="fs-5"> 0 </span>
+                </i>
+            </button>
+
         </div>
     )
 }

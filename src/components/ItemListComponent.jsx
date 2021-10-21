@@ -1,6 +1,6 @@
 
 
-function ItemListComponent({ titulo}) {
+const ItemListComponent = ({ titulo }) =>{
     return (
         <div>
             <h1 className="container  mx-md-2 my-5 text-center" >{titulo} </h1>
@@ -9,3 +9,5 @@ function ItemListComponent({ titulo}) {
 }
 
 export default ItemListComponent
+
+
