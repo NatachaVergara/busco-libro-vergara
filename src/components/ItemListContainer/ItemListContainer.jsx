@@ -1,15 +1,16 @@
-import { useState} from 'react'
-import ItemCount from "./ItemCount/ItemCount"
+
+import ItemCount from "../ItemCount/ItemCount"
 
 
 
 const ItemListContainer = ({ titulo }) => {
     // eslint-disable-next-line no-unused-vars
-    const [agregarItem, setAgregarItem] = useState('')
+   
     
     //Funcion para agregar items al carrito al momento de utilizar el btn del itemContainer
-    const onAdd = () => {
-        setAgregarItem(console.log('Item agregado'))
+    //No creo que este bien aplicado pero por ahora es lo que se me ocurrio agregar
+    const onAdd = () => {        
+        (console.log('Item Agregado'))        
     }
 
     return (
