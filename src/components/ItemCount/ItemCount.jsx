@@ -6,24 +6,24 @@ const ItemCount = ({ stock, initial, onAdd}) => {
     const [count, setCount] = useState(1)
 
    //Funcion para sumar items al carrito
+    //mientras que el contador sea menor a stock, va a sumar
     const addItem = () => {
         if (count <= stock) {            
            setCount(count + 1)           
          }
     }
-    //Funcion para remover items al carrito
+    //Funcion para remover items del carrito
+    //Mientras el count sea mayor a inicial, va a restar
     const removeItem = () => {
         if (count >= initial) {
             setCount(count - 1)
-        }
+        } 
     }
-    //Funcion que utiliza la funcion creada onAdd y traida del itemListCointainer que permite habilitar el btn Agregar al carrito
+    //Funcion que utiliza la funcion creada onAdd del itemListCointainer que me permite habilitar el btn Agregar al carrito
     const btnAdd = () => {        
         if (count >= 1) {
             onAdd()            
-        } else {
-            alert('No hay item para agregar')
-        }
+        } 
     }
  
 
@@ -35,8 +35,7 @@ const ItemCount = ({ stock, initial, onAdd}) => {
                  <h2 className="mx-2">{count}</h2>
                  <button type="button" className="btn btn-primary btn-sm" onClick={addItem} > + </button>
             </div>
-             <button type="button" className="btn btn-secondary" onClick={btnAdd}>Agregar al carrito</button>
-            
+             <button type="button" className="btn btn-secondary" onClick={btnAdd}>Agregar al carrito</button>            
         </div>
     )
 }
