@@ -21,6 +21,8 @@ const ItemCount = ({ stock, initial, onAdd}) => {
     const btnAdd = () => {        
         if (count >= 1) {
             onAdd()            
+        } else {
+            alert('No hay item para agregar')
         }
     }
  
