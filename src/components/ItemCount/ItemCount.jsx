@@ -2,13 +2,16 @@ import { useState } from 'react'
 import './itemCount.css'
 
 const ItemCount = ({ stock, initial, onAdd }) => {
-
+    
     const [count, setCount] = useState(1)
 
     //Funcion para sumar items al carrito
     //mientras que el contador sea menor a stock, va a sumar
     const addItem = () => {
-        if (count <= stock) { setCount(count + 1) }
+        if (count < stock)
+        {   
+            setCount(count + 1)
+        }
     }
     //Funcion para remover items del carrito
     //Mientras el count sea mayor a inicial, va a restar
@@ -17,9 +20,15 @@ const ItemCount = ({ stock, initial, onAdd }) => {
     }
     //Funcion que utiliza la funcion creada onAdd del itemListCointainer que me permite habilitar el btn Agregar al carrito
     const btnAdd = () => {
-      
-        if (count >= initial ) { onAdd() }
-    }
+       //Si count es mayor a inicial que active el botón
+        if (count >= initial) {   
+            console.log(`Producto seleccionado ${count}`)
+            console.log(`Stock restante ${stock-count}`)
+            onAdd()
+        }      
+        
+
+    }   
 
 
     return (
