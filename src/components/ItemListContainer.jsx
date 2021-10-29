@@ -7,11 +7,10 @@ const ItemListContainer = ({ titulo }) => {
     // eslint-disable-next-line no-unused-vars
     const [agregarItem, setAgregarItem] = useState('')
     
+    //Funcion para agregar items al carrito al momento de utilizar el btn del itemContainer
     const onAdd = () => {
         setAgregarItem(console.log('Item agregado'))
     }
-
-    
 
     return (
         <div>
