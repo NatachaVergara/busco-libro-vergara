@@ -8,7 +8,7 @@ const ItemListContainer = ({ titulo }) => {
     //Funcion para agregar items al carrito al momento de utilizar el btn del itemContainer
     //No creo que este bien aplicado pero por ahora es lo que se me ocurrio agregar
     const onAdd = () => {        
-        (console.log('Item Agregado '))        
+        (console.log(`Item o items agregados `))        
     }
 
     return (
