@@ -1,5 +1,6 @@
 //Importo el npm de bootswatch
 import "bootswatch/dist/quartz/bootstrap.min.css";
+import 'animate.css'
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 
 
@@ -12,7 +13,7 @@ function App() {
       {/**Desarrollar un navbar dentro del componente navBar */}
       <NavBar />
       {/**Desarrollar un componente que contendra el catalogo de la app */}
-      <ItemListContainer titulo="Proximamente un listado del catálogo de libros"/>
+      <ItemListContainer />
     </div>
   );
 }

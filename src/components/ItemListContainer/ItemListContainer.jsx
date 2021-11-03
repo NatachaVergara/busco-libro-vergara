@@ -19,7 +19,7 @@ const getItems = new Promise((res, rej) => {
 
 })
 
-const ItemListContainer = ({ titulo }) => {
+const ItemListContainer = () => {
     const [items, setItems] = useState([])
     const [loading, setLoading] = useState(true)  
 

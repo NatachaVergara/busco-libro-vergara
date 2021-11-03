@@ -13,7 +13,7 @@ const Item = ({ id, title, price, pictureUrl }) => {
                     <ul className="list-group list-group-flush">
                         <li className="list-group-item text-dark">Precio: $ {price} </li>
                     </ul>
-                    <button type="button" className="btn btn-outline-success">Ver</button>
+                    <button type="button" className="btn btn-outline-success text-dark">Ver</button>
                 </div>
         </div>
 
