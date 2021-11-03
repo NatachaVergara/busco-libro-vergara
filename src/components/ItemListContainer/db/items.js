@@ -17,7 +17,12 @@ const libros = [
         price: 400,
         pictureUrl: "https://m.media-amazon.com/images/P/B008724IZG.01._SCLZZZZZZZ_SX500_.jpg"
     },
-    
+    {
+        id: 4,
+        title: "Ramsés, el hijo de la luz",
+        price: 350,
+        pictureUrl: "https://pictures.abebooks.com/inventory/22821372492.jpg" ,
+    }
 
     
     

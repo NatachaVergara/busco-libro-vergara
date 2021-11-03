@@ -20,11 +20,6 @@ const ItemCount = ({ stock, initial, onAdd }) => {
     }
 
 
-  //  Funcion que utiliza la funcion creada onAdd del itemListCointainer que me permite habilitar el btn Agregar al carrito
-    const btnAdd = () => {       
-      onAdd()
-      
-    }
 
 
     return (
@@ -38,7 +33,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
                 <button type="button" className="btn btn-primary btn-sm me-1" onClick={removeItem}  > - </button>
             </div>
 
-            <button type="button" className="btn btn-secondary" onClick={btnAdd} disabled={count < initial}>Agregar al carrito</button>
+            <button type="button" className="btn btn-secondary" onClick={() => onAdd()} disabled={count < initial}>Agregar al carrito</button>
         </div>
     )
 }
