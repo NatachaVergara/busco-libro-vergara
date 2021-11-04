@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react'
-
-// import ItemCount from "../ItemCount/ItemCount"
+import ItemCount from "../ItemCount/ItemCount"
 import ItemList from "./ItemList"
-import libros from "./db/items" //Array con mis libros(api)
+import libros from "../../db/items" //Array con mis libros(api)
 import Spiner from '../Spinner/Spinner'
 
 //LLamo a la api items
@@ -22,31 +21,29 @@ const getItems = new Promise((res, rej) => {
 const ItemListContainer = () => {
     const [items, setItems] = useState([])
     const [loading, setLoading] = useState(true)  
-
-
+    
     useEffect(() => {
+        
         //Me traigo del api el array con los libros
         getItems
             .then(res => setItems(res))
             .catch(err => console.log(err))
             .finally(() => setLoading(false))       
-
-    },[])
+        console.log(items)
+    },[items] ) //La unica forma que tuve para que no se repitera la busqueda fue poner item dentro de los corchetes. 
     
-    
-    console.log(items)
+       
    
-   
-    // const onAdd = () => {        
-    //     (console.log(`Item o items agregados `))        
-    // }
+    const onAdd = () => {        
+        (console.log(`Item o items agregados `))        
+    }
 
     return (
         <div>
             {/* <h1 className="container  mx-md-2 my-5 text-center" >{titulo} </h1> */}
             
             {loading ? <Spiner mensaje="Buscando libros....."/>: <ItemList items={items} />}
-            {/* <ItemCount stock="5" initial="1" onAdd={onAdd} /> */}
+            <ItemCount stock="5" initial="1" onAdd={onAdd} />
         </div>
     )
 }
