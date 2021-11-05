@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './itemCount.css'
 
-const ItemCount = ({ stock, initial, onAdd }) => {
+const ItemCount = ({ stock, initial, onAdd, title }) => {
     const [count, setCount] = useState(1)
     
 
@@ -24,7 +24,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
 
     return (
         <div className="container text-center ">
-            <h6> El amuleto </h6>
+            <h6> {title} </h6>
             
             <div className="mb-3 d-flex flex-row justify-content-center align-items-center">
                 <button type="button" className="btn btn-primary btn-sm" onClick={addItem}  > + </button>

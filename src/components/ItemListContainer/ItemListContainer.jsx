@@ -29,9 +29,9 @@ const ItemListContainer = () => {
             .then(res => setItems(res))
             .catch(err => console.log(err))
             .finally(() => setLoading(false))       
-        console.log(items)
-    },[items] ) //La unica forma que tuve para que no se repitera la busqueda fue poner item dentro de los corchetes. 
-    
+        
+    },[] ) //La unica forma que tuve para que no se repitera la busqueda fue poner item dentro de los corchetes. 
+    console.log(items)
        
    
     const onAdd = () => {        
