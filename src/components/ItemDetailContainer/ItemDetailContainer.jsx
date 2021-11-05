@@ -35,7 +35,7 @@ const ItemDetailContainer = () => {
     console.log(item)
     return (
         <div>           
-            {loading ? <Spiner mensaje="Estamos trayendo su libro....." /> : <ItemDetail item={item[0]} />}
+            {loading ? <Spiner mensaje="Estamos trayendo su libro....." /> : <ItemDetail item={item[3]} />}
         </div>
     )
 }
