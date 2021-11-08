@@ -32,10 +32,14 @@ const ItemDetailContainer = () => {
 
     }, [])    
     
+    const onAdd = () => {
+        (console.log(`Item o items agregados `))
+    }
+
     console.log(item)
     return (
         <div>           
-            {loading ? <Spiner mensaje="Estamos trayendo su libro....." /> : <ItemDetail item={item[3]} />}
+            {loading ? <Spiner mensaje="Estamos trayendo su libro....." /> : <ItemDetail item={item[3]} onAdd={onAdd }/>}
         </div>
     )
 }
