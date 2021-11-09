@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router';
+import { useParams } from 'react-router-dom';
 import libros from "../../db/items" //Array con mis libros(api)
 import Spiner from '../Spinner/Spinner';
 import ItemDetail from './ItemDetail';
@@ -24,12 +24,12 @@ const ItemDetailContainer = () => {
     const [item, setItem] = useState([])
     const [loading, setLoading] = useState(true)
 
-    const { id } = useParams
+    const { id } = useParams()
     console.log(id)
     useEffect(() => {
         if (id) {
             getItem
-                .then(res => setItem(res.filter(element => element.id === id)))
+                .then(res => setItem(res.find(element => element.id === id)))
                 .catch(err => console.log(err))
                 .finally(() => setLoading(false))
 
@@ -53,7 +53,7 @@ const ItemDetailContainer = () => {
     
     return (
         <div>           
-            {loading ? <Spiner mensaje="Estamos trayendo su libro....." /> : <ItemDetail item={`${item[id]}`} onAdd={onAdd}/>}
+            {loading ? <Spiner mensaje="Estamos trayendo su libro....." /> : <ItemDetail item={item} onAdd={onAdd}/>}
         </div>
     )
 }

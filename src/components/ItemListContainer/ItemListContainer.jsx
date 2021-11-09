@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom'
 //import ItemCount from "../ItemCount/ItemCount"
 import ItemList from "./ItemList"
 import libros from "../../db/items" //Array con mis libros(api)
 import Spiner from '../Spinner/Spinner'
-//import { useParams } from 'react-router'
+
 
 //LLamo a la api items
 const getItems = new Promise((res, rej) => {
@@ -23,19 +24,26 @@ const ItemListContainer = () => {
     const [items, setItems] = useState([])
     const [loading, setLoading] = useState(true)  
     
+    const { id } = useParams();
 
    
     useEffect(() => {
-        
+        if (id) {
+            getItems
+                .then(res => setItems(res.filter(prod => prod.estado === id)))
+                .catch(err => console.log(err))
+                .finally(() => setLoading(false))
+        } else {
+             getItems
+                 .then(res => setItems(res))
+                 .catch(err => console.log(err))
+                 .finally(() => setLoading(false))
+            
+        }
 
-        //Me traigo del api el array con los libros
-        getItems
-            .then(res => setItems(res))
-            .catch(err => console.log(err))
-            .finally(() => setLoading(false))       
-        
-    },[] ) //La unica forma que tuve para que no se repitera la busqueda fue poner item dentro de los corchetes. 
-    console.log(items)
+       
+    },[id] )
+   
        
    
     // const onAdd = () => {        

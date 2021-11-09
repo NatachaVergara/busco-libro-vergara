@@ -4,7 +4,7 @@
 import { Link } from "react-router-dom"
 import CartWidget from "../CartWidget/CartWidget"
 
-const  NavBar = () => {
+const NavBar = () => {
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-primary ">
             <div className="container-fluid d-flex flex-md-row justify-content-between">
@@ -15,26 +15,24 @@ const  NavBar = () => {
 
                 <div className="collapse navbar-collapse justify-content-md-around" id="navbarColor01">
                     <div className="d-flex flex-column flex-md-row">
-
-                        <ul className="navbar-nav me-md-5 pe-md-5">
+                        <ul className="navbar-nav me-md-5 pe-md-5 d-flex flex-column">
                             <Link to={'/catalogo'} className="nav-item me-md-2 text-decoration-none">
-                               Ver catálogo y comprar
+                                Ver catálogo completo
                             </Link>
-                            {/* <li className="nav-item dropdown ">
-                                <a className="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Vender</a>
+                            <li class="nav-item dropdown ">
+                                <a className="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categorias</a>
                                 <div className="dropdown-menu">
-                                    <a className="dropdown-item" href="#">Nuevos</a>
-                                    <a className="dropdown-item" href="#">Usados</a>
+                                    <Link to={'/categoria/nuevo'} className="dropdown-item" >Nuevos</Link>
+                                    <Link to={'/categoria/usado'} className="dropdown-item">Usados</Link>
+
                                 </div>
-                            </li> */}
+                            </li>
                         </ul>
-
-
                         <ul className="navbar-nav mt-1 d-flex flex-row justify-content-evenly">
-                            <li className="nav-item me-md-5">
+                            <li className="nav-item me-md-1">
                                 <button type="button" class="btn btn-outline-light ">Login</button>
                             </li>
-                            <li className="nav-item me-md-4">
+                            <li className="nav-item me-md-1">
                                 <button type="button" class="btn btn-outline-light">Sign in</button>
                             </li>
                         </ul>
