@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router';
 import libros from "../../db/items" //Array con mis libros(api)
 import Spiner from '../Spinner/Spinner';
 import ItemDetail from './ItemDetail';
@@ -22,24 +23,37 @@ const getItem = new Promise((res, rej) => {
 const ItemDetailContainer = () => {
     const [item, setItem] = useState([])
     const [loading, setLoading] = useState(true)
-    useEffect(() => {
-        getItem
-            .then(res => setItem(res))
-            .catch(err => console.log(err))
-            .finally(() => setLoading(false))
-        
-       
 
-    }, [])    
+    const { id } = useParams
+    console.log(id)
+    useEffect(() => {
+        if (id) {
+            getItem
+                .then(res => setItem(res.filter(element => element.id === id)))
+                .catch(err => console.log(err))
+                .finally(() => setLoading(false))
+
+        } else {
+            getItem
+                .then(res => setItem(res))
+                .catch(err => console.log(err))
+                .finally(() => setLoading(false))
+
+        }
+            
+    }, [id])    
     
+    console.log(id)
+
     const onAdd = () => {
         (console.log(`Item o items agregados `))
     }
 
     console.log(item)
+    
     return (
         <div>           
-            {loading ? <Spiner mensaje="Estamos trayendo su libro....." /> : <ItemDetail item={item[3]} onAdd={onAdd }/>}
+            {loading ? <Spiner mensaje="Estamos trayendo su libro....." /> : <ItemDetail item={`${item[id]}`} onAdd={onAdd}/>}
         </div>
     )
 }

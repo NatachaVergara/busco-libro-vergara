@@ -3,7 +3,7 @@ import React from 'react'
 import ItemCount from "../ItemCount/ItemCount"
 
 const ItemDetail = ({ item, onAdd }) => {
-   
+    console.log(item)
     return (
         
         <div className="container d-flex justify-content-center" >

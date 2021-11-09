@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react'
-import ItemCount from "../ItemCount/ItemCount"
+//import ItemCount from "../ItemCount/ItemCount"
 import ItemList from "./ItemList"
 import libros from "../../db/items" //Array con mis libros(api)
 import Spiner from '../Spinner/Spinner'
+//import { useParams } from 'react-router'
 
 //LLamo a la api items
 const getItems = new Promise((res, rej) => {
@@ -22,8 +23,11 @@ const ItemListContainer = () => {
     const [items, setItems] = useState([])
     const [loading, setLoading] = useState(true)  
     
+
+   
     useEffect(() => {
         
+
         //Me traigo del api el array con los libros
         getItems
             .then(res => setItems(res))
@@ -34,16 +38,16 @@ const ItemListContainer = () => {
     console.log(items)
        
    
-    const onAdd = () => {        
-        (console.log(`Item o items agregados `))        
-    }
+    // const onAdd = () => {        
+    //     (console.log(`Item o items agregados `))        
+    // }
 
     return (
         <div>
             {/* <h1 className="container  mx-md-2 my-5 text-center" >{titulo} </h1> */}
             
             {loading ? <Spiner mensaje="Buscando libros....."/>: <ItemList items={items} />}
-            <ItemCount stock="5" initial="1" onAdd={onAdd} />
+            {/* <ItemCount stock="5" initial="1" onAdd={onAdd} /> */}
         </div>
     )
 }

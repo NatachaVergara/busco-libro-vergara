@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-no-undef */
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 
 const Item = ({ id, title, price, pictureUrl }) => {
@@ -13,7 +14,7 @@ const Item = ({ id, title, price, pictureUrl }) => {
                     <ul className="list-group list-group-flush">
                         <li className="list-group-item text-dark">Precio: $ {price} </li>
                     </ul>
-                    <button type="button" className="btn btn-outline-success text-dark">Ver</button>
+                <Link to={`/detail/${id}`} type="button" className="btn btn-outline-success text-dark">Ver</Link>
                 </div>
         </div>
 
