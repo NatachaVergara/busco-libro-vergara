@@ -10,9 +10,9 @@ const ItemDetail = ({ item }) => {
     return (
 
         <div className="animate__animated animate__fadeInDown container d-flex justify-content-center" >
-            <div className="card mt-2 mb-2 d-flex flex-row" >
-                <div className="mt-md-5 mt-lg-3" >
-                    <h6 className="text-center text-dark ms-2 mb-3"> {item.autor} </h6>
+            <div className="card mt-2 mb-2 d-md-flex flex-md-row" >
+                <div className="d-flex flex-column justify-content-center" >
+                    <h6 className="text-center text-dark "> {item.autor} </h6>
                     <img src={item.pictureUrl} className="card-img-top container" style={{ width: "150px", height: "150px" }} alt="img" />
                 </div>
 
@@ -27,7 +27,7 @@ const ItemDetail = ({ item }) => {
                     </ul>
                 </div>
 
-                <div className="card-body mt-5">
+                <div className="card-body d-flex flex-column justify-content-center">
                     <ItemCount stock={item.stock} initial="1" title={item.title} onAdd={onAdd} />
                 </div>
             </div>
