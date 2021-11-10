@@ -14,7 +14,7 @@ const Item = ({ id, title, price, pictureUrl }) => {
                     <ul className="list-group list-group-flush">
                         <li className="list-group-item text-dark">Precio: $ {price} </li>
                     </ul>
-                <Link to={`/detail/${id}`} type="button" className="btn btn-outline-success text-dark">Ver</Link>
+                <Link to={`/item/${id}`} type="button" className="btn btn-outline-success text-dark">Ver</Link>
                 </div>
         </div>
 

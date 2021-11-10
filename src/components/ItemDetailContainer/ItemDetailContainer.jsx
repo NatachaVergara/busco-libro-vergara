@@ -4,7 +4,7 @@ import libros from "../../db/items" //Array con mis libros(api)
 import Spiner from '../Spinner/Spinner';
 import ItemDetail from './ItemDetail';
 
-// eslint-disable-next-line no-unused-vars
+
 const getItem = new Promise((res, rej) => {
     const condition = true;
     
@@ -25,7 +25,7 @@ const ItemDetailContainer = () => {
     const [loading, setLoading] = useState(true)
 
     const { id } = useParams()
-    console.log(id)
+    
     useEffect(() => {
         if (id) {
             getItem
@@ -43,16 +43,16 @@ const ItemDetailContainer = () => {
             
     }, [id])    
     
-    console.log(id)
-
+    
+    //Funcion que permite el funcionamiento correcto del btn add item que pasa como prop a itemDetail
     const onAdd = () => {
         (console.log(`Item o items agregados `))
     }
 
-    console.log(item)
+    
     
     return (
-        <div>           
+        <div>
             {loading ? <Spiner mensaje="Estamos trayendo su libro....." /> : <ItemDetail item={item} onAdd={onAdd}/>}
         </div>
     )

@@ -16,7 +16,7 @@ const NavBar = () => {
                 <div className="collapse navbar-collapse justify-content-md-around" id="navbarColor01">
                     <div className="d-flex flex-column flex-md-row">
                         <ul className="navbar-nav me-md-5 pe-md-5 d-flex flex-column">
-                            <Link to={'/catalogo'} className="nav-item me-md-2 text-decoration-none">
+                            <Link to={'/'} className="nav-item me-md-2 text-decoration-none">
                                 Ver catálogo completo
                             </Link>
                             <li class="nav-item dropdown ">

@@ -52,8 +52,7 @@ const ItemListContainer = () => {
 
     return (
         <div>
-            {/* <h1 className="container  mx-md-2 my-5 text-center" >{titulo} </h1> */}
-            
+                    
             {loading ? <Spiner mensaje="Buscando libros....."/>: <ItemList items={items} />}
             {/* <ItemCount stock="5" initial="1" onAdd={onAdd} /> */}
         </div>
