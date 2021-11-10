@@ -29,4 +29,4 @@ Este proyecto una vez terminado, el interes principal será poder ofreserlos a p
 :gear: Version control 
 ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
 
-
+[![Netlify Status](https://api.netlify.com/api/v1/badges/93163b8d-7b0a-4c18-aadd-5590a76315af/deploy-status)](https://app.netlify.com/sites/busco-libro-app/deploys)
