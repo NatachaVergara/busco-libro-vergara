@@ -1,4 +1,4 @@
-# :computer: Proyecto Final - Primera entrega - React - E-commerce - Coderhouse
+# :computer: Proyecto Final - Primera entrega - React <br/> E-commerce - Coderhouse
  
 :gear: Tecnologías
 
@@ -7,7 +7,7 @@
 ![Android Studio](https://img.shields.io/badge/Android%20Studio-3DDC84.svg?style=for-the-badge&logo=android-studio&logoColor=white)
 
 
-:gear: Dependencias usuadas para dar estilos y animaciónes a mi app
+:gear: Dependencias usuadas para dar estilos y animaciones a mi app
 
 :zap: Bootstrap
 <br/>
@@ -21,11 +21,11 @@
 
 
 
-:bulb: El proyecto consiste en la creacion de un e-commerce.
+:bulb: El proyecto consiste en la creación de un e-commerce.
 <br/>
-La idea de mi proyecto se basó en una necesidad de crear una aplicación donde pueda tener un cátalogo propio de todos mis libros y poder venderlos sin la obligación de depender de una aplicación externa en la cual deba dejar parte de mis ganancias.
+La idea de mi proyecto se basó en una necesidad de crear una aplicación donde pueda tener un cátalogo propio de todos mis libros y poder venderlos sin la obligación a depender de una aplicación externa en la cual deba dejar parte de mis ganancias.
 Cuando la app este terminada, contará con un catálogo de más de 100 libros y así un usuario va a poder loguearse, seleccionar el o los libros que quiera y poder pagarlo todo dentro de Busco Libro app. <br/>
-Este proyecto una vez terminado, el interes principal será poder ofreserlos a pequeñas o medianas librerias. 
+Con este proyecto una vez terminado, el interés principal será poder ofrecerlos a pequeñas o medianas librerias. 
 
 
 
