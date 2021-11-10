@@ -1,20 +1,32 @@
 # :computer: Proyecto Final - Primera entrega - React - Coderhouse
+ 
+:gear: Tecnologías
 
-:gear: Tecnologías y herramientas utilizadas:
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) <br/>
+![NPM](https://img.shields.io/badge/NPM-%23000000.svg?style=for-the-badge&logo=npm&logoColor=white) <br/>
+![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white) <br/>
+![Android Studio](https://img.shields.io/badge/Android%20Studio-3DDC84.svg?style=for-the-badge&logo=android-studio&logoColor=white)
 
-:zap: React
-<br/>
-:zap: Javascript
-<br/>
-:zap: JQuery
 
-:bulb: El proyecto consiste en el desarrollo de un carrito de compras.
-<br/>
-En ésta oportunidad, el mismo se trata de una tienda de pistas de batería pre grabadas para utilizar en producción.
-<br/>
-En principio fue desarrollado con JS Vainilla y luego, se incorporó el uso de la librería JQuery para la manipulación del DOM,
-<br/>
-incorporación de eventos, animaciones, etc.
-<br/> 
+:gear: Dependencias usuadas para dar estilos
 
-:battery: En desarrollo (11/2021)
+:zap: bootstrap
+<br/>
+:zap: bootswatch
+<br/>
+:zap: animate.css
+
+:bulb: El proyecto consiste en la creacion de un e-commerce.
+<br/>
+La idea de mi proyecto se basó en una necesidad de crear una aplicación donde pueda tener un cátalogo propio de todos mis libros y poder venderlos sin la obligación de depender de una aplicación externa en la cual deba dejar parte de mis ganancias.
+Cuando la app este terminada, contará con un catálogo de más de 100 libros y así un usuario va a poder loguearse, seleccionar el o los libros que quiera y poder pagarlo todo dentro de Busco Libro app. <br/>
+Este proyecto una vez terminado, el interes principal será poder ofreserlos a pequeñas o medianas librerias. 
+
+
+
+👷‍♀️ En desarrollo (11/2021)
+
+:gear: Version control 
+![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
+
+
