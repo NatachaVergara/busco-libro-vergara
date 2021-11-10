@@ -1,20 +1,25 @@
-# :computer: Proyecto Final - Primera entrega - React - Coderhouse
+# :computer: Proyecto Final - Primera entrega - React - E-commerce - Coderhouse
  
 :gear: Tecnologías
 
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) <br/>
 ![NPM](https://img.shields.io/badge/NPM-%23000000.svg?style=for-the-badge&logo=npm&logoColor=white) <br/>
-![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white) <br/>
 ![Android Studio](https://img.shields.io/badge/Android%20Studio-3DDC84.svg?style=for-the-badge&logo=android-studio&logoColor=white)
 
 
-:gear: Dependencias usuadas para dar estilos
+:gear: Dependencias usuadas para dar estilos y animaciónes a mi app
 
-:zap: bootstrap
+:zap: Bootstrap
 <br/>
-:zap: bootswatch
+:zap: Bootswatch
+<br/>
+:zap: Bootstrap-icons
+<br/>
+:zap: react-bootstrap
 <br/>
 :zap: animate.css
+
+
 
 :bulb: El proyecto consiste en la creacion de un e-commerce.
 <br/>

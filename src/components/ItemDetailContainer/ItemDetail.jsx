@@ -9,7 +9,7 @@ const ItemDetail = ({ item }) => {
 }
     return (
         
-        <div className="container d-flex justify-content-center" >
+        <div className="animate__animated animate__fadeInDown container d-flex justify-content-center" >
             <div className="card mt-2 mb-2 " style={{ width: "30rem" }} >
                 <h3 className="card-title m-2 text-center fs-3 text-dark">{item.title}  </h3>
                 <h4 className="text-center text-dark">Autor: {item.autor} </h4>

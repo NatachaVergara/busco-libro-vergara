@@ -7,7 +7,7 @@ const Item = ({ id, title, price, pictureUrl }) => {
     
     return (
 
-        <div className="col-sm-12 col-md-6 col-lg-4" id={id}>           
+        <div className="animate__animated animate__zoomIn col-sm-12 col-md-6 col-lg-4" id={id}>
                 <div className="card mb-3">
                     <p className="card-header text-dark">{title} </p>
                     <img src={pictureUrl} className="card-img-top container mb-3 mt-2" style={{ width: "250px", height: "300px" }} alt="..." />
