@@ -1,8 +1,12 @@
 import React from 'react'
 import ItemCount from "../ItemCount/ItemCount"
 
-const ItemDetail = ({ item, onAdd }) => {
+const ItemDetail = ({ item }) => {
     
+//crear aca la funcion onAdd
+    const onAdd = () => {
+    console.log('Agregado')
+}
     return (
         
         <div className="container d-flex justify-content-center" >

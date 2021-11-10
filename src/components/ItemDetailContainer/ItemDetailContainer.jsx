@@ -43,17 +43,11 @@ const ItemDetailContainer = () => {
             
     }, [id])    
     
-    
-    //Funcion que permite el funcionamiento correcto del btn add item que pasa como prop a itemDetail
-    const onAdd = () => {
-        (console.log(`Item o items agregados `))
-    }
-
-    
-    
+   
     return (
         <div>
-            {loading ? <Spiner mensaje="Estamos trayendo su libro....." /> : <ItemDetail item={item} onAdd={onAdd}/>}
+            
+            {loading ? <Spiner mensaje="Estamos trayendo su libro....." /> : <ItemDetail item={item}/>}
         </div>
     )
 }
