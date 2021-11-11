@@ -7,7 +7,7 @@ import ItemDetail from './ItemDetail';
 
 const getItem = new Promise((res, rej) => {
     const condition = true;
-    
+
     if (condition) {
         setTimeout(() => {
             res(libros)
@@ -25,7 +25,7 @@ const ItemDetailContainer = () => {
     const [loading, setLoading] = useState(true)
 
     const { id } = useParams()
-    
+
     useEffect(() => {
         if (id) {
             getItem
@@ -40,14 +40,14 @@ const ItemDetailContainer = () => {
                 .finally(() => setLoading(false))
 
         }
-            
-    }, [id])    
-    
-   
+
+    }, [id])
+
+
     return (
         <div>
-            
-            {loading ? <Spiner mensaje="Estamos trayendo su libro....." /> : <ItemDetail item={item}/>}
+
+            {loading ? <Spiner mensaje="Estamos trayendo su libro....." /> : <ItemDetail item={item} />}
         </div>
     )
 }

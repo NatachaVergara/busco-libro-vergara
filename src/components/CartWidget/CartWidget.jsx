@@ -1,9 +1,5 @@
-
-
-
+import React from 'react';
 const CartWidget = () => {
-
-
     return (
         <div >
             <button type="button"
@@ -12,7 +8,6 @@ const CartWidget = () => {
                     <span clasName="fs-5"> 0 </span>
                 </i>
             </button>
-
         </div>
     )
 }

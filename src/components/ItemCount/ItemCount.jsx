@@ -3,20 +3,20 @@ import './itemCount.css'
 
 const ItemCount = ({ stock, initial, onAdd, title }) => {
     const [count, setCount] = useState(1)
-    
+
 
 
     //Funcion para sumar items al carrito
     //mientras que el contador sea menor a stock, va a sumar
     const addItem = () => {
         count >= stock ? console.log('No hay más stock para agregar') : setCount(count + 1)
-        
+
     }
     //Funcion para remover items del carrito
     //Mientras el count sea mayor a inicial, va a restar
     const removeItem = () => {
         count >= initial ? setCount(count - 1) : console.log(`No hay items para agregar`)
-        
+
     }
 
 
@@ -25,7 +25,7 @@ const ItemCount = ({ stock, initial, onAdd, title }) => {
     return (
         <div className="container text-center ">
             <h6> {title} </h6>
-            
+
             <div className="mb-3 d-flex flex-row justify-content-center align-items-center">
                 <button type="button" className="btn btn-primary btn-sm" onClick={addItem}  > + </button>
                 <h2 className="mx-2">{count}</h2>

@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-//import ItemCount from "../ItemCount/ItemCount"
 import ItemList from "./ItemList"
 import libros from "../../db/items" //Array con mis libros(api)
 import Spiner from '../Spinner/Spinner'
@@ -46,15 +45,13 @@ const ItemListContainer = () => {
    
        
    
-    // const onAdd = () => {        
-    //     (console.log(`Item o items agregados `))        
-    // }
+   
 
     return (
         <div>
                     
             {loading ? <Spiner mensaje="Buscando libros....."/>: <ItemList items={items} />}
-            {/* <ItemCount stock="5" initial="1" onAdd={onAdd} /> */}
+         
         </div>
     )
 }

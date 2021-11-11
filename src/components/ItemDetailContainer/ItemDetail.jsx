@@ -14,7 +14,7 @@ const ItemDetail = ({ item }) => {
                 <div className="d-flex flex-column justify-content-center" >
                     <h6 className="text-center text-dark mt-3"> {item.autor} </h6>
                     <img src={item.pictureUrl} className="card-img-top container" style={{ width: "150px", height: "150px" }} alt="img" />
-                    <div className="card-body d-flex flex-column justify-content-center">
+                    <div className="card-body d-none d-md-flex flex-column justify-content-center">
                         <ItemCount stock={item.stock} initial="1" title={item.title} onAdd={onAdd} />
                     </div>
                 </div>
@@ -28,6 +28,9 @@ const ItemDetail = ({ item }) => {
                         <li className="list-group-item text-dark fs-5">Estado: {item.estado} </li>
                         <li className="list-group-item text-dark fs-5">Precio: ${item.price} </li>
                     </ul>
+                    <div className="card-body d-flex d-md-none flex-column justify-content-center">
+                        <ItemCount stock={item.stock} initial="1" title={item.title} onAdd={onAdd} />
+                    </div>
                 </div>
 
 
