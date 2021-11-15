@@ -23,8 +23,8 @@
 
 :bulb: El proyecto consiste en la creación de un e-commerce.
 <br/>
-La idea de mi proyecto se basó en una necesidad de crear una aplicación donde pueda tener un cátalogo propio de todos mis libros y poder venderlos sin la obligación a depender de una aplicación externa en la cual deba dejar parte de mis ganancias.
-Cuando la app este terminada, contará con un catálogo de más de 100 libros y así un usuario va a poder loguearse, seleccionar el o los libros que quiera y poder pagarlo todo dentro de Busco Libro app. <br/>
+La idea de mi proyecto se basó en una necesidad de crear una aplicación donde pueda tener un cátalogo propio de todos mis libros y poder venderlos sin la obligación a depender de una aplicación externa en la cual deba dejar parte de mis ganancias.  <br/>
+Cuando la app este terminada, contará con un catálogo de más de 100 libros, de esa manera un usuario va a poder loguearse, seleccionar el o los libros que quiera y poder pagarlo todo dentro de Busco Libro app. <br/>
 Con este proyecto una vez terminado, el interés principal será poder ofrecerlos a pequeñas o medianas librerias. 
 
 
