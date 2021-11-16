@@ -14,7 +14,9 @@ const CartContextProvider = ({ children }) => {
     const agregarCarrito = (item) => {
         setCartList([...cartList, item])
     }
-    console.log(cartList)
+    const eraseCart = () => {
+        setCartList([])
+    }
     
 
 
@@ -22,7 +24,8 @@ const CartContextProvider = ({ children }) => {
         <CartContext.Provider value={
             {
                 cartList,
-                agregarCarrito
+                agregarCarrito,
+                eraseCart
             }}>
             
             {children}
