@@ -1,24 +1,23 @@
-import { useContext, useState } from 'react'
+import {  useState } from 'react'
 import { Link } from 'react-router-dom'
-import { CartContext } from '../../context/CartContext'
+import {  useCartContext } from '../../context/CartContext'
 import ItemCount from "../ItemCount/ItemCount"
 
 const ItemDetail = ({ item }) => {
     const [wasClick, setWasClick] = useState(false)
+    // eslint-disable-next-line no-unused-vars
     const [count, setCount] = useState(1)
 
-    const { cartList, agregarCarrito } = useContext(CartContext)
+    const { cartList, agregarCarrito } = useCartContext()
         
 
     const onAdd = (count) => {
         setCount(count)
-        agregarCarrito({ ...item, cantidad: count })
+        agregarCarrito({ ...item, item , cantidad: count })
         setWasClick(true)
     }
 
-    console.log(`contador : ${count}`)
-    console.log(cartList)
-
+    
 
    
 
@@ -34,7 +33,8 @@ const ItemDetail = ({ item }) => {
 
                         {wasClick === false ?                            
                             <ItemCount                               
-                                onAdd={onAdd} initial={1}
+                                onAdd={onAdd}
+                                initial={1}
                                 stocks={item.stock}
                                
                             /> :
@@ -59,7 +59,8 @@ const ItemDetail = ({ item }) => {
                     <div className="card-body d-flex d-md-none flex-column justify-content-center">
                         {wasClick === false ?
                             <ItemCount
-                                onAdd={onAdd} initial={1}
+                                onAdd={onAdd}
+                                initial={1}
                                 stocks={item.stock}
 
                             /> :

@@ -1,18 +1,23 @@
-import {createContext, useState} from 'react'
+import { createContext, useState, useContext} from 'react'
 
-export const CartContext = createContext([])
+ const CartContext = createContext([])
 
-//Vamos a crear un componente para poder tener un componente propio y poder inyectar un estado y variebles globales
+
+export const useCartContext = () => {
+    return useContext(CartContext)
+}
 
 const CartContextProvider = ({ children }) => {
     const [cartList, setCartList] = useState([])
 
        
     const agregarCarrito = (item) => {
-       setCartList(item)
+        setCartList([...cartList, item])
     }
-
+    console.log(cartList)
     
+
+
     return (
         <CartContext.Provider value={
             {
