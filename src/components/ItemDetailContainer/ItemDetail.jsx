@@ -13,16 +13,14 @@ const ItemDetail = ({ item }) => {
     const onAdd = (count) => {
         setCount(count)
         agregarCarrito({ ...item, cantidad: count })
+        setWasClick(true)
     }
 
     console.log(`contador : ${count}`)
     console.log(cartList)
 
 
-    const onClick = () => {        
-        setWasClick(true)
-    }
-
+   
 
     return (
 
@@ -34,14 +32,13 @@ const ItemDetail = ({ item }) => {
                     <div className="card-body d-none d-md-flex flex-column justify-content-center">
                      
 
-                        {wasClick === false ?
-                            
-                            <ItemCount
+                        {wasClick === false ?                            
+                            <ItemCount                               
                                 onAdd={onAdd} initial={1}
                                 stocks={item.stock}
                                
                             /> :
-                            <ul onClick={onClick}>
+                            <ul >
                                 <Link to='/'><button type="button" class="btn btn-danger mb-1">Seguir comprando</button></Link>
                                 <Link to='/cart'><button type="button" class="btn btn-danger">Terminar compra</button></Link>
                             </ul>
@@ -60,14 +57,16 @@ const ItemDetail = ({ item }) => {
                         <li className="list-group-item text-dark fs-5">Precio: ${item.price} </li>
                     </ul>
                     <div className="card-body d-flex d-md-none flex-column justify-content-center">
-                        {wasClick === true ?
-                            <ul>
-                                <Link to='/'><button type="button" class="btn btn-danger mb-1">Seguir comprando</button></Link>
-                                <Link to='/cart'><button type="button" class="btn btn-danger">Terminar compra</button></Link>
-                            </ul> :
+                        {wasClick === false ?
                             <ItemCount
                                 onAdd={onAdd} initial={1}
-                                stocks={item.stock} />
+                                stocks={item.stock}
+
+                            /> :
+                            <ul >
+                                <Link to='/'><button type="button" class="btn btn-danger me-1 mb-1">Seguir comprando</button></Link>
+                                <Link to='/cart'><button type="button" class="btn btn-danger">Terminar compra</button></Link>
+                            </ul>
                         }
                     </div>
                 </div>
