@@ -8,24 +8,20 @@ const ItemDetail = ({ item }) => {
     const [count, setCount] = useState(1)
 
     const { cartList, agregarCarrito } = useContext(CartContext)
-    
+        
+
     const onAdd = (count) => {
         setCount(count)
-        
+        agregarCarrito({ ...item, cantidad: count })
     }
 
-    console.log(`contador: ${count}`)
+    console.log(`contador : ${count}`)
     console.log(cartList)
 
-    const onClick = () => {
-        agregarCarrito({...item, cantidad: count})
+
+    const onClick = () => {        
         setWasClick(true)
-
     }
-
-
-
-
 
 
     return (
@@ -36,15 +32,16 @@ const ItemDetail = ({ item }) => {
                     <h6 className="text-center text-dark mt-3"> {item.autor} </h6>
                     <img src={item.pictureUrl} className="card-img-top container" style={{ width: "150px", height: "150px" }} alt="img" />
                     <div className="card-body d-none d-md-flex flex-column justify-content-center">
-
-
-                        <ItemCount
-                            onAdd={onAdd} initial={1}
-                            stocks={item.stock} />
+                     
 
                         {wasClick === false ?
-                            <button type="button" class="btn btn-secondary" onClick={onClick}>Agregar al carrito </button> :
-                            <ul>
+                            
+                            <ItemCount
+                                onAdd={onAdd} initial={1}
+                                stocks={item.stock}
+                               
+                            /> :
+                            <ul onClick={onClick}>
                                 <Link to='/'><button type="button" class="btn btn-danger mb-1">Seguir comprando</button></Link>
                                 <Link to='/cart'><button type="button" class="btn btn-danger">Terminar compra</button></Link>
                             </ul>
@@ -63,19 +60,14 @@ const ItemDetail = ({ item }) => {
                         <li className="list-group-item text-dark fs-5">Precio: ${item.price} </li>
                     </ul>
                     <div className="card-body d-flex d-md-none flex-column justify-content-center">
-                        <ItemCount
-                            onAdd={onAdd} initial={1}
-                            stocks={item.stock} />
-                        {wasClick === false ?
-                            <button type="button" class="btn btn-secondary" onClick={onClick}>Agregar al carrito </button> :
+                        {wasClick === true ?
                             <ul>
-                                <Link to='/'>
-                                    <button type="button" class="btn btn-danger mb-1">Seguir comprando</button>
-                                </Link>
-                                <Link to='/cart'>
-                                    <button type="button" class="btn btn-danger">Terminar compra</button>
-                                </Link>
-                            </ul>
+                                <Link to='/'><button type="button" class="btn btn-danger mb-1">Seguir comprando</button></Link>
+                                <Link to='/cart'><button type="button" class="btn btn-danger">Terminar compra</button></Link>
+                            </ul> :
+                            <ItemCount
+                                onAdd={onAdd} initial={1}
+                                stocks={item.stock} />
                         }
                     </div>
                 </div>
