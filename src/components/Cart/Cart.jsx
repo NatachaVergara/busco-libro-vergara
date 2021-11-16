@@ -13,7 +13,7 @@ export const Cart = () => {
         
             {
                 cartList.map(item =>
-                    <div className="w-50ms-md-5 ps-5"> 
+                    <div className="w-50ms-md-5 ps-5" key={item.id}>
                     <table class="table table-hover container">
                         <thead >
                             <tr>
