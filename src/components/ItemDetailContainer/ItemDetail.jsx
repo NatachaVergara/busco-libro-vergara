@@ -1,19 +1,26 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { CartContext } from '../../context/CartContext'
 import ItemCount from "../ItemCount/ItemCount"
 
 const ItemDetail = ({ item }) => {
     const [wasClick, setWasClick] = useState(false)
+    const [count, setCount] = useState(1)
 
-    const [quantity, setQuantity] = useState(1)
-    const itemQuantity = (count) => {
-        setQuantity(count)
+    const { cartList, agregarCarrito } = useContext(CartContext)
+    
+    const onAdd = (count) => {
+        setCount(count)
         
     }
-    console.log(quantity)
+
+    console.log(`contador: ${count}`)
+    console.log(cartList)
 
     const onClick = () => {
+        agregarCarrito({...item, cantidad: count})
         setWasClick(true)
+
     }
 
 
@@ -32,7 +39,7 @@ const ItemDetail = ({ item }) => {
 
 
                         <ItemCount
-                            onAdd={itemQuantity} initial="1"
+                            onAdd={onAdd} initial={1}
                             stocks={item.stock} />
 
                         {wasClick === false ?
@@ -57,7 +64,7 @@ const ItemDetail = ({ item }) => {
                     </ul>
                     <div className="card-body d-flex d-md-none flex-column justify-content-center">
                         <ItemCount
-                            onAdd={itemQuantity} initial="1"
+                            onAdd={onAdd} initial={1}
                             stocks={item.stock} />
                         {wasClick === false ?
                             <button type="button" class="btn btn-secondary" onClick={onClick}>Agregar al carrito </button> :
