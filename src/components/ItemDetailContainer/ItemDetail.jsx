@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
-import {  useState } from 'react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import {  useCartContext } from '../../context/CartContext'
+import { useCartContext } from '../../context/CartContext'
 import ItemCount from "../ItemCount/ItemCount"
 
 const ItemDetail = ({ item }) => {
@@ -9,16 +9,15 @@ const ItemDetail = ({ item }) => {
     // eslint-disable-next-line no-unused-vars
     const [count, setCount] = useState(1)
 
-    const {  agregarCarrito } = useCartContext()
-        
+    const { addItem } = useCartContext()
 
-    const onAdd = (count) => {
-        setCount(count)
-        agregarCarrito(item , count )
+
+    const onAdd = () => {       
+        addItem(item, count)
         setWasClick(true)
-        
+        return setCount(count)
     }
- 
+
 
     return (
 
@@ -28,14 +27,14 @@ const ItemDetail = ({ item }) => {
                     <h6 className="text-center text-dark mt-3"> {item.autor} </h6>
                     <img src={item.pictureUrl} className="card-img-top container" style={{ width: "150px", height: "150px" }} alt="img" />
                     <div className="card-body d-none d-md-flex flex-column justify-content-center">
-                     
 
-                        {wasClick === false ?                            
-                            <ItemCount                               
+
+                        {wasClick === false ?
+                            <ItemCount
                                 onAdd={onAdd}
                                 initial={1}
                                 stocks={item.stock}
-                               
+
                             /> :
                             <ul >
                                 <Link to='/'><button type="button" class="btn btn-danger mb-1">Seguir comprando</button></Link>
@@ -51,7 +50,7 @@ const ItemDetail = ({ item }) => {
                     <h4 className="text-center" >Sinopsis</h4>
                     <p className="card-text text-dark"> {item.resumen}  </p>
                     <ul className="list-group list-group-flush">
-                        <li className="list-group-item text-dark fs-5">Stock disponible: {item.stock}  unidades  </li>
+                        {/* <li className="list-group-item text-dark fs-5">Stock disponible: {item.stock}  unidades  </li> */}
                         <li className="list-group-item text-dark fs-5">Estado: {item.estado} </li>
                         <li className="list-group-item text-dark fs-5">Precio: ${item.price} </li>
                     </ul>

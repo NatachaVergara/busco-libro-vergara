@@ -11,7 +11,7 @@ const CartContextProvider = ({ children }) => {
     const [cartList, setCartList] = useState([])
 
 
-    const agregarCarrito = (item, cantidad) => {
+    const addItem = (item, cantidad) => {
 
         const isInCart = (item) => {
             return cartList.some((cartItem) => cartItem.id === item.id);
@@ -34,12 +34,7 @@ const CartContextProvider = ({ children }) => {
 
 
     const eraseItem = (id) => {
-
-        //setCartList(cartList.filter((i)=> i.id !== id))
-
-        cartList.splice(cartList.findIndex((i) => i.id === cartList.id))
-        setCartList([...cartList])
-
+        setCartList(cartList.filter((i)=> i.id !== id))
 
     }
 
@@ -54,11 +49,9 @@ const CartContextProvider = ({ children }) => {
         <CartContext.Provider value={
             {
                 cartList,
-                agregarCarrito,
+                addItem,
                 eraseCart,
                 eraseItem
-
-
             }}>
 
             {children}
