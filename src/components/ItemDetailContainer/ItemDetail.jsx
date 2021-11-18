@@ -12,10 +12,10 @@ const ItemDetail = ({ item }) => {
     const { addItem } = useCartContext()
 
 
-    const onAdd = () => {       
+    const onAdd = (count) => {       
         addItem(item, count)
         setWasClick(true)
-        return setCount(count)
+        setCount(count)
     }
 
 
