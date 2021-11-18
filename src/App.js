@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "bootswatch/dist/quartz/bootstrap.min.css";
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import 'animate.css'
+
 //Components
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import NavBar from './components/NavBar/NavBar';

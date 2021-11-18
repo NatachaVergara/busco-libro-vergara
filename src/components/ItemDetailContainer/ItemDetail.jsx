@@ -16,6 +16,7 @@ const ItemDetail = ({ item }) => {
         setCount(count)
         agregarCarrito({ ...item, item , cantidad: count })
         setWasClick(true)
+        
     }
 
     
@@ -41,7 +42,7 @@ const ItemDetail = ({ item }) => {
                             /> :
                             <ul >
                                 <Link to='/'><button type="button" class="btn btn-danger mb-1">Seguir comprando</button></Link>
-                                <Link to='/cart'><button type="button" class="btn btn-danger">Terminar compra</button></Link>
+                                <Link to='/cart'><button type="button" class="btn btn-danger">Ir al carrito de compra</button></Link>
                             </ul>
                         }
 
