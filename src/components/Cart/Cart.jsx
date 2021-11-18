@@ -1,4 +1,3 @@
-
 import { useCartContext } from '../../context/CartContext'
 import '../../index.css'
 import { CartEmpty } from './CartEmpty'
@@ -10,12 +9,10 @@ export const Cart = () => {
 
     return (
         <div>
-
-
-            {cartList.length === 0 ? <CartEmpty h1="Carrito de compra vacío" /> :
+            {cartList.length === 0 ? <CartEmpty h1="Su carrito está vacío" /> :
 
                 cartList.map(item =>
-                    <div className="ms-md-5 ps-md-5">
+                    <div className="mt-2 ms-md-4 ps-md-4  ms-lg-5 ps-lg-5">
                         <table className="table table-hover container">
                             <thead >
                                 <tr>
@@ -25,7 +22,7 @@ export const Cart = () => {
                                     <th scope="col">Precio</th>
                                     <th scope="col">Sub total</th>
                                     <th scope="col">
-                                        <i className="bi bi-trash-fill text-dark deletBtn" onClick={() => eraseItem(item.id)}></i>
+                                        <i className="bi bi-trash-fill text-dark deletBtn fs-3" onClick={() => eraseItem(item.id)}></i>
                                     </th>
 
                                 </tr>
@@ -33,7 +30,7 @@ export const Cart = () => {
                             <tbody>
                                 <tr className="table-active">
                                     <th scope="row"></th>
-                                    <td>{item.autor} : <br />
+                                    <td className="td">{item.autor} : <br />
                                         {item.title}</td>
                                     <td>{item.cantidad}</td>
                                     <td>${item.price}</td>
@@ -44,7 +41,7 @@ export const Cart = () => {
                     </div>
                 )
             }
-
+                
 
             {
                 cartList.length === 0 ? null :
