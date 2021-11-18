@@ -9,19 +9,16 @@ const ItemDetail = ({ item }) => {
     // eslint-disable-next-line no-unused-vars
     const [count, setCount] = useState(1)
 
-    const { cartList, agregarCarrito } = useCartContext()
+    const {  agregarCarrito } = useCartContext()
         
 
     const onAdd = (count) => {
         setCount(count)
-        agregarCarrito({ ...item, item , cantidad: count })
+        agregarCarrito(item , count )
         setWasClick(true)
         
     }
-
-    
-
-   
+ 
 
     return (
 
@@ -54,7 +51,7 @@ const ItemDetail = ({ item }) => {
                     <h4 className="text-center" >Sinopsis</h4>
                     <p className="card-text text-dark"> {item.resumen}  </p>
                     <ul className="list-group list-group-flush">
-                        <li className="list-group-item text-dark fs-5">Stock disponible: {item.stock} unidades  </li>
+                        <li className="list-group-item text-dark fs-5">Stock disponible: {item.stock}  unidades  </li>
                         <li className="list-group-item text-dark fs-5">Estado: {item.estado} </li>
                         <li className="list-group-item text-dark fs-5">Precio: ${item.price} </li>
                     </ul>

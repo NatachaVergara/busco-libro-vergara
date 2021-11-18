@@ -12,11 +12,11 @@ export const Cart = () => {
         <div>
             
         
-            {cartList.length === 0 ? <CartEmpty h1="Carrito de compra vacio" /> :
+            {cartList.length === 0 ? <CartEmpty h1="Carrito de compra vacío" /> :
                 
                 cartList.map(item =>
                 <div className="ms-md-5 ps-md-5">
-                    <table class="table table-hover container">
+                    <table className="table table-hover container">
                         <thead >
                             <tr>
                                 <th scope="col"></th>
@@ -33,7 +33,8 @@ export const Cart = () => {
                         <tbody>
                                 <tr  className="table-active">
                                     <th scope="row"></th>
-                                    <td>{item.autor}</td>
+                                    <td>{item.autor} : <br/>
+                                        {item.title}</td>
                                     <td>{item.cantidad}</td>
                                     <td>{item.price}</td>
                                     <td>{item.price}</td>
