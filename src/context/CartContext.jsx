@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { createContext, useState, useContext } from 'react'
 
 const CartContext = createContext([])
@@ -12,21 +13,11 @@ const CartContextProvider = ({ children }) => {
 
 
     const addItem = (item, cantidad) => {
+        let inCartList = cartList.find((cartItem) => cartItem.id === item.id);
 
-        const isInCart = (item) => {
-            return cartList.some((cartItem) => cartItem.id === item.id);
-        };
-
-        if (isInCart(item)) {
-            let newCart = cartList
-            newCart.forEach((i) => {
-                if (i.id === item.id) {
-                    i.cantidad += cantidad
-                }
-
-            });
-            console.log(newCart)
-            setCartList(newCart)
+        if (inCartList) {
+            inCartList.cantidad += cantidad
+            setCartList([...cartList])
         } else {
             setCartList([...cartList, { ...item, cantidad }])
         }
@@ -35,14 +26,19 @@ const CartContextProvider = ({ children }) => {
 
 
     const eraseItem = (id) => {
-        setCartList(cartList.filter((i)=> i.id !== id))
+        setCartList(cartList.filter((i) => i.id !== id))
     }
 
     const cantItem = () => {
-        return cartList.reduce((acum, item) => acum = acum + item.cantidad, 0)       
-        
-    }
+        return cartList.reduce((acum, item) => acum = acum + item.cantidad, 0)
 
+    }
+    const sumaPrecioItems = () => {
+        return cartList.reduce((acum, item) => acum = acum + item.price, 0)
+
+    }
+    
+  
 
     const eraseCart = () => {
         setCartList([])
@@ -57,7 +53,9 @@ const CartContextProvider = ({ children }) => {
                 addItem,
                 eraseCart,
                 eraseItem,
-                cantItem
+                cantItem,
+                sumaPrecioItems,
+                
             }}>
 
             {children}

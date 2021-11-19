@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import CartWidget from "../CartWidget/CartWidget"
-import { useCartContext } from '../../context/CartContext'
+
 const NavBar = () => {
 
     
