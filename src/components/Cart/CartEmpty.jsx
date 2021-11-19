@@ -1,6 +1,8 @@
 import React from 'react'
+
 import '../../index.css'
-export const CartEmpty = ({h1}) => {
+export const CartEmpty = ({ h1 }) => {
+   
     return (
         <div className="container d-flex flex-column">
             <h1 className="align-self-center">{h1} </h1>

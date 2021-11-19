@@ -1,8 +1,14 @@
 import { Link } from "react-router-dom"
 import CartWidget from "../CartWidget/CartWidget"
-
+import { useCartContext } from '../../context/CartContext'
 const NavBar = () => {
+
+    
     return (
+
+        
+
+
         <nav className="navbar navbar-expand-lg navbar-dark bg-primary ">
             <div className="container-fluid d-flex flex-md-row justify-content-between">
                 <Link className="navbar-brand ms-5 ms-md-0 align-self-start" to={'/'}>Busco Libro</Link>
@@ -35,9 +41,12 @@ const NavBar = () => {
                                 <button type="button" class="btn btn-outline-light">Sign in</button>
                             </li>
                         </ul>
+                       
                         <Link to={'/cart'}
                             className="mt-1 align-self-center text-decoration-none">
+                            
                             <CartWidget />
+                           
                         </Link>
                     </div>
                 </div>

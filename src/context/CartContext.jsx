@@ -25,6 +25,7 @@ const CartContextProvider = ({ children }) => {
                 }
 
             });
+            console.log(newCart)
             setCartList(newCart)
         } else {
             setCartList([...cartList, { ...item, cantidad }])
@@ -35,7 +36,11 @@ const CartContextProvider = ({ children }) => {
 
     const eraseItem = (id) => {
         setCartList(cartList.filter((i)=> i.id !== id))
+    }
 
+    const cantItem = () => {
+        return cartList.reduce((acum, item) => acum = acum + item.cantidad, 0)       
+        
     }
 
 
@@ -51,7 +56,8 @@ const CartContextProvider = ({ children }) => {
                 cartList,
                 addItem,
                 eraseCart,
-                eraseItem
+                eraseItem,
+                cantItem
             }}>
 
             {children}
