@@ -6,7 +6,7 @@ import '../../index.css'
 import { CartEmpty } from './CartEmpty'
 export const Cart = () => {
     
-    const { cartList, eraseCart, eraseItem, cantItem, sumaPrecioItems } = useCartContext()
+    const { cartList, eraseCart, eraseItem, cantItem, totalPrice  } = useCartContext()
 
     console.log(cartList)
 
@@ -33,7 +33,7 @@ export const Cart = () => {
                             <tbody>
                                 <tr className="table-active">
                                     <th scope="row"></th>
-                                    <td className="td">{item.autor} : <br />
+                                    <td className="td">{item.autor}  <br />
                                         {item.title}</td>
                                     <td>{item.cantidad}</td>
                                     <td>${item.price}</td>
@@ -49,11 +49,11 @@ export const Cart = () => {
                     <>
                         <button type="button" className="btn btn-outline-secondary ms-5 " onClick={eraseCart}>Eliminar carrito</button>
 
-                        <div className="card container w-50 mt-3 mb-5 text-center ">
+                        <div className="card container vw-100 mt-3 mb-5 text-center ">
                             <div className="card-body">
                                 <h4 className="card-title">Comprar Carrito</h4>
                                 <h6 className="card-subtitle mb-2 text-muted">Cantidad de productos: {cantItem()} </h6>
-                                <p className="card-text">Total:   </p>
+                                <p className="card-text">Total: {totalPrice()}  </p>
                                 <Link to='/checkOut' className="card-link">Terminar compra</Link>
                                 <Link to='/' className="card-link">Seguir comprando</Link>
                             </div>
