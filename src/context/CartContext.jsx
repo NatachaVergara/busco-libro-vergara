@@ -42,7 +42,7 @@ const CartContextProvider = ({ children }) => {
     const totalPrice = () => {
         return cartList.reduce((acum, item) => (acum += item.price * item.cantidad), 0)
     }
-    
+    //el 0 da el valor inicial
 
 
     const eraseCart = () => {
