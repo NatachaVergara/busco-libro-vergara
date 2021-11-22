@@ -1,7 +1,6 @@
 import { getFirestore } from '../../service/fireBaseConfig'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
-//import libros from "../../db/items" //Array con mis libros(api)
 import Spiner from '../Spinner/Spinner';
 import ItemDetail from './ItemDetail';
 
