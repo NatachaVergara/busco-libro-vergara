@@ -1,23 +1,10 @@
+import { getFirestore } from '../../service/fireBaseConfig'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
-import libros from "../../db/items" //Array con mis libros(api)
+//import libros from "../../db/items" //Array con mis libros(api)
 import Spiner from '../Spinner/Spinner';
 import ItemDetail from './ItemDetail';
 
-
-const getItem = new Promise((res, rej) => {
-    const condition = true;
-
-    if (condition) {
-        setTimeout(() => {
-            res(libros)
-        }, 2000)
-    } else {
-        rej('404 Not found')
-    }
-
-
-})
 
 
 const ItemDetailContainer = () => {
@@ -27,27 +14,22 @@ const ItemDetailContainer = () => {
     const { id } = useParams()
 
     useEffect(() => {
-        if (id) {
-            getItem
-                .then(res => setItem(res.find(element => element.id === id)))
-                .catch(err => console.log(err))
-                .finally(() => setLoading(false))
+        const bdQuery = getFirestore()
 
-        } else {
-            getItem
-                .then(res => setItem(res))
-                .catch(err => console.log(err))
-                .finally(() => setLoading(false))
-
-        }
+        //buscar solo 1 id
+        bdQuery.collection('items').doc(id).get() //traer 1 por el id
+            .then(resp => setItem({ id: resp.id, ...resp.data() }))
+            .catch(err => console.log(err))
+            .finally(() => setLoading(false))
 
     }, [id])
 
+    console.log(id)
 
     return (
         <div>
 
-            {loading ? <Spiner mensaje="Estamos trayendo su libro....." /> : <ItemDetail item={item} />}
+            {loading ? <Spiner mensaje="Estamos trayendo su libro....." /> : <ItemDetail item={item} key={id} />}
         </div>
     )
 }
