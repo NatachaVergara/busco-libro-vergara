@@ -17,6 +17,8 @@ const ItemListContainer = () => {
     useEffect(() => {
         const bdQuery = getFirestore()
        
+
+        //si el useParams llega vacio entonces que me muestre el catalogo completo, de lo contrario que me traiga segun lo que vino por parámetro. 
         if (categoryId ===  undefined) {
             bdQuery.collection('items').get()
                 .then(data => setItems(data.docs.map(i => ({ id: i.id, ...i.data() }))))
@@ -29,26 +31,11 @@ const ItemListContainer = () => {
                 .finally(() => setLoading(false))
 
         }
-
+      
         
 
-        // bdQuery.collection('items').get()
-        //     .then(data => setItems(data.docs.map(i => ({ id: i.id, ...i.data() }))))
-        //     .catch(err => console.log(err))
-        //     .finally(() => setLoading(false))
-        
-        
-
-        // //COn limite
+        // Con limite
         //     bdQuery.collection('items').limit(2).get()
-        //     .then(data => setItems(data.docs.map(i => ({ id: i.id, ...i.data() }))))
-        //     .catch(err => console.log(err))
-        //     .finally(() => setLoading(false))
-
-
-
-        ///buscar por categoria
-        // bdQuery.collection('items').where('categoryId', '==', 'nuevo').get()
         //     .then(data => setItems(data.docs.map(i => ({ id: i.id, ...i.data() }))))
         //     .catch(err => console.log(err))
         //     .finally(() => setLoading(false))
@@ -61,23 +48,7 @@ const ItemListContainer = () => {
         //     .finally(() => setLoading(false))
 
 
-       
-
-
-
-        //Forma vieja, no usar mas
-        // if (id) {
-        //     getItems
-        //         .then(res => setItems(res.filter(prod => prod.estado === id)))
-        //         .catch(err => console.log(err))
-        //         .finally(() => setLoading(false))
-        // } else {
-        //      getItems
-        //          .then(res => setItems(res))
-        //          .catch(err => console.log(err))
-        //          .finally(() => setLoading(false))
-
-        // }
+        
 
 
     }, [categoryId])

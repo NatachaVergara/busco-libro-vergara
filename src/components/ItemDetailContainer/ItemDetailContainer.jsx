@@ -15,7 +15,7 @@ const ItemDetailContainer = () => {
     useEffect(() => {
         const bdQuery = getFirestore()
 
-        //buscar solo 1 id
+        //busca y trae solo 1 elemento segun el id que llega por parámetro
         bdQuery.collection('items').doc(id).get() //traer 1 por el id
             .then(resp => setItem({ id: resp.id, ...resp.data() }))
             .catch(err => console.log(err))
