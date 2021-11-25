@@ -18,7 +18,7 @@ export const Cart = () => {
         const order = {}
 
 
-        order.buyer = formData
+        order.buyer = { name: 'Natacha', email: 'natacha@gmail.com', tel: 44418770, direccion: ' Evergreen Terrace 742, Springfield, 1407'}     //formData
         order.total = totalPrice()
         order.date = firebase.firestore.Timestamp.fromDate(new Date())
         order.items = cartList.map(cartItem => {
