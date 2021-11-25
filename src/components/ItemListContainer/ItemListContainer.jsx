@@ -15,17 +15,17 @@ const ItemListContainer = () => {
 
 
     useEffect(() => {
-        const bdQuery = getFirestore()
+        const dbQuery = getFirestore()
        
 
         //si el useParams llega vacio entonces que me muestre el catalogo completo, de lo contrario que me traiga segun lo que vino por parámetro. 
         if (categoryId ===  undefined) {
-            bdQuery.collection('items').get()
+            dbQuery.collection('items').get()
                 .then(data => setItems(data.docs.map(i => ({ id: i.id, ...i.data() }))))
                 .catch(err => console.log(err))
                 .finally(() => setLoading(false))
         } else {
-            bdQuery.collection('items').where('categoryId', '==',  categoryId ).get()
+            dbQuery.collection('items').where('categoryId', '==',  categoryId ).get()
                 .then(data => setItems(data.docs.map(i => ({ id: i.id, ...i.data() }))))
                 .catch(err => console.log(err))
                 .finally(() => setLoading(false))
@@ -35,14 +35,14 @@ const ItemListContainer = () => {
         
 
         // Con limite
-        //     bdQuery.collection('items').limit(2).get()
+        //     dbQuery.collection('items').limit(2).get()
         //     .then(data => setItems(data.docs.map(i => ({ id: i.id, ...i.data() }))))
         //     .catch(err => console.log(err))
         //     .finally(() => setLoading(false))
 
 
         //Buscar por precio (se pueden ir haciendo anidando where(algo).where(algo))
-        // bdQuery.collection('items').where('price', '>', 300).get()
+        // dbQuery.collection('items').where('price', '>', 300).get()
         //     .then(data => setItems(data.docs.map(i => ({ id: i.id, ...i.data() }))))
         //     .catch(err => console.log(err))
         //     .finally(() => setLoading(false))
