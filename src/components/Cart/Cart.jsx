@@ -77,9 +77,11 @@ export const Cart = () => {
 
             })
 
-
+        console.log(order)
     }
 
+        
+    //Permite mostrar el modal cuando doy terminar orden y me borra el carrito de compra
     const handleHide = () => {
         setShowModal(false)
         eraseCart()
@@ -148,7 +150,7 @@ export const Cart = () => {
                                         <label for="tel" className="form-label">Teléfono</label>
                                         <input type="text" value={tel} onChange={(e) => setTel(e.target.value)} className="form-control" id="tel" />
                                     </div>
-                                    <button className="card-link m-2" onClick={() => setShowModal(true)} >Terminar compra</button>
+                                    <button className="card-link m-2 btn btn-success" onClick={() => setShowModal(true)} >Terminar compra</button>
                                 </form>
                             </div>
                         </div>
