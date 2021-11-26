@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 
 const ItemCount = ({ stocks, initial, onAdd }) => {
-    const [count, setCount] = useState(initial)
+    const [count, setCount] = useState(0)
 
     const increase = () => {
         if (count < stocks) {
@@ -28,7 +28,7 @@ const ItemCount = ({ stocks, initial, onAdd }) => {
                 <button type="button" className="btn btn-primary btn-sm" onClick={decrease} disabled={count === 0} >-</button>
                 
             </div>
-            <p> stock: {stocks - count } </p>
+            <p> {stocks === 0 ? 'No hay stock' : `stock: ${stocks - count }`} </p>
             <button type="button" class="btn btn-secondary" onClick={() => onAdd(count)} disabled={count === 0}  >Agregar al carrito </button>
         </div>
     )

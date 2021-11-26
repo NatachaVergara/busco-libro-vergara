@@ -7,18 +7,27 @@ import '../../index.css'
 import { CartEmpty } from './CartEmpty'
 import firebase from 'firebase'
 import { getFirestore } from '../../service/fireBaseConfig'
+import CompraFinalizada from '../ModalCompra/CompraFinalizada'
 
 export const Cart = () => {
-    const [formData, setFormData] = useState({})
+    const [orderId, setOrderId] = useState(null)
+    const [showModal, setShowModal] = useState(false)
+    const [name, setName] = useState('')
+    const [email, setEmail] = useState('')
+    const [tel, setTel] = useState('')
+
+
+
 
     const { cartList, eraseCart, eraseItem, cantItem, totalPrice } = useCartContext()
 
     const generarOrden = (e) => {
         e.preventDefault();
+
         const order = {}
 
 
-        order.buyer = { name: 'Natacha', email: 'natacha@gmail.com', tel: 44418770, direccion: ' Evergreen Terrace 742, Springfield, 1407'}     //formData
+        order.buyer = { name, email, tel } //formData
         order.total = totalPrice()
         order.date = firebase.firestore.Timestamp.fromDate(new Date())
         order.items = cartList.map(cartItem => {
@@ -35,8 +44,13 @@ export const Cart = () => {
 
         //Creo una colleccion llamada orders donde se va a ir guardando cada orden de compra realizada
         orders.add(order)
-            .then(resp => console.log(`Su orden fue procesada, su numero de id es: ${resp.id}`))
+            //guardarlo dentro de un estado! y asi despues puedo sacar el id
+            .then(res => {
+                setOrderId(res.id) //No me actualiza el valor de orderID
+                console.log(res.id)
+            })
             .catch(err => console.log(err))
+
 
         //Actualiza todos los items que estan en el listado de Cart del cartContext
         const itemsToUpdate = dbQ.collection('items').where(firebase.firestore.FieldPath.documentId(), 'in', cartList.map(i => i.id))
@@ -58,24 +72,15 @@ export const Cart = () => {
                 })
 
             })
+
         console.log(order)
+        console.log(orderId) //El order id sigue apareciendo en Null
         eraseCart()
     }
+    
+    
 
 
-    const handleChange = (e) => {
-        setFormData({
-            ...formData,
-            [e.target.nombre]: e.target.value,
-            [e.target.apellido]: e.target.value,
-            [e.target.email]: e.target.value,
-            [e.target.tel]: e.target.value,
-            [e.target.direccion]: e.target.value,
-            [e.target.codigoPostal]: e.target.value
-
-        })
-    }
-    console.log(formData)
 
     return (
         <div>
@@ -116,51 +121,33 @@ export const Cart = () => {
                     <>
                         <button type="button" className="btn btn-outline-secondary ms-5 " onClick={eraseCart}>Eliminar carrito</button>
                         <Link to='/' className="card-link m-5">
-                            <button type="button" className="btn btn-outline-danger ms-5 ">  Seguir comprando </button>
+                            <button type="button" className="btn btn-outline-danger mt-2 mt-md-0 ms-md-5 ">  Seguir comprando </button>
                         </Link>
                         <div className="card container vw-100 mt-3 mb-5 text-center ">
                             <div className="card-body">
                                 <h4 className="card-title">Comprar Carrito</h4>
                                 <h6 className="card-subtitle mb-2 text-muted">Cantidad de productos: {cantItem()} </h6>
                                 <p className="card-text">Total: {totalPrice()}  </p>
-
-
                                 <form onSubmit={generarOrden}
-                                    onchange={handleChange}
-                                    className="container">
-                                    <div class="col-md-6">
+                                    className="container cartForm">
+                                    <div class="col-md-6 ">
                                         <label for="nombre" className="form-label">Nombre</label>
-                                        <input type="text" value={formData.nombre} className="form-control" id="nombre" />
+                                        <input type="text" value={name} onChange={(e) => setName(e.target.value)} className="form-control" id="nombre" />
                                     </div>
-                                    <div class="col-md-6">
-                                        <label for="apellido" className="form-label">Apellido</label>
-                                        <input type="text" value={formData.apellido} className="form-control" id="apellido" />
-                                    </div>
-                                    <div class="col-md-6">
+
+                                    <div class="col-md-6 ">
                                         <label for="email" className="form-label">Email</label>
-                                        <input type="email" value={formData.email} className="form-control" id="email" />
+                                        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} className="form-control" id="email" />
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-6 ">
                                         <label for="tel" className="form-label">Teléfono</label>
-                                        <input type="number" value={formData.tel} className="form-control" id="tel" />
+                                        <input type="text" value={tel} onChange={(e) => setTel(e.target.value)} className="form-control" id="tel" />
                                     </div>
-                                    <div class="col-12">
-                                        <label for="inputAddress" className="form-label">Direccion</label>
-                                        <input type="text" value={formData.direccion} className="form-control" id="inputAddress" placeholder="1234 Main St" />
-                                    </div>
-
-                                    <div class="col-md-2">
-                                        <label for="codigoPostal" className="form-label">Código Postal</label>
-                                        <input type="number" value={formData.codigoPostal} className="form-control" id="codigoPostal" />
-                                    </div>
-
-                                    <button className="card-link" >Terminar compra</button>
-
+                                    <button className="card-link m-2" onClick={() => setShowModal(true)} >Terminar compra</button>
                                 </form>
-
-
                             </div>
                         </div>
+                        <CompraFinalizada show={showModal} onHide={() => setShowModal(false)}  />
                     </>
 
             }
