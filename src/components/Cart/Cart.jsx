@@ -45,9 +45,9 @@ export const Cart = () => {
         //Creo una colleccion llamada orders donde se va a ir guardando cada orden de compra realizada
         orders.add(order)
             //guardarlo dentro de un estado! y asi despues puedo sacar el id
-            .then(res => {
+            .then((res) => {
                 setOrderId(res.id) //No me actualiza el valor de orderID
-                console.log(res.id)
+               
             })
             .catch(err => console.log(err))
 
@@ -68,17 +68,21 @@ export const Cart = () => {
                     })
                 })
                 batch.commit().then(res => {
+                    
                     console.log(`Stock actualizado`)
                 })
 
             })
 
-        console.log(order)
-        console.log(orderId) //El order id sigue apareciendo en Null
-        eraseCart()
+        // console.log(order)
+        // console.log(orderId) //El order id sigue apareciendo en Null
+       //
     }
     
-    
+    const handleHide = () => {
+        setShowModal(false)
+        eraseCart()
+    }
 
 
 
@@ -147,7 +151,7 @@ export const Cart = () => {
                                 </form>
                             </div>
                         </div>
-                        <CompraFinalizada show={showModal} onHide={() => setShowModal(false)}  />
+                        <CompraFinalizada show={showModal} onHide={handleHide} orderId={orderId} total={totalPrice()} />
                     </>
 
             }

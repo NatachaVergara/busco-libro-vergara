@@ -11,9 +11,9 @@ const CompraFinalizada = (props) => {
                 {...props}
                 >
                 <Modal.Header closeButton>
-                    <Modal.Title>Modal heading</Modal.Title>
+                    <Modal.Title>Compra finalizada con éxito</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>{props.orderId}  </Modal.Body>
+                <Modal.Body> `El id de su orden es: {props.orderId} y el total es ${props.total}` </Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={props.onHide}>
                         Close
