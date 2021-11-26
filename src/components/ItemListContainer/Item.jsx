@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 
+
 const Item = ({ id, title, price, pictureUrl, stock }) => {
 
     return (
@@ -16,8 +17,8 @@ const Item = ({ id, title, price, pictureUrl, stock }) => {
                     <li className="list-group-item text-dark">Precio: $ {price} </li>
 
 
-                    {stock === 0 ? <li className="list-group-item text-dark">Fuera de stock </li> :
-                        <li className="list-group-item text-dark">Stock: {stock} </li>
+                    {stock === 0 ? <li className="list-group-item" style={{color:'red'}}>Fuera de stock </li> :
+                        <li className="list-group-item " style={{ color: 'green' }}>Stock: {stock} </li>
                     }
 
 

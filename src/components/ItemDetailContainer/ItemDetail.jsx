@@ -50,7 +50,7 @@ const ItemDetail = ({ item }) => {
                     <h4 className="text-center" >Sinopsis</h4>
                     <p className="card-text text-dark"> {item.resumen}  </p>
                     <ul className="list-group list-group-flush">
-                        {/* <li className="list-group-item text-dark fs-5">Stock disponible: {item.stock}  unidades  </li> */}
+                        
                         <li className="list-group-item text-dark fs-5">Estado: {item.categoryId} </li>
                         <li className="list-group-item text-dark fs-5">Precio: ${item.price} </li>
                     </ul>
