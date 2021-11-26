@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 
 const ItemCount = ({ stocks, initial, onAdd }) => {
@@ -30,6 +31,8 @@ const ItemCount = ({ stocks, initial, onAdd }) => {
             </div>
             <p> {stocks === 0 ? 'No hay stock' : `stock: ${stocks - count }`} </p>
             <button type="button" class="btn btn-secondary" onClick={() => onAdd(count)} disabled={count === 0}  >Agregar al carrito </button>
+            <Link to='/' type="button" class="btn btn-secondary mt-2" >Volver al catálogo </Link>
+
         </div>
     )
 }

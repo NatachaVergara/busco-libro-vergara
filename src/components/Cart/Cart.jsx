@@ -8,9 +8,11 @@ import { CartEmpty } from './CartEmpty'
 import firebase from 'firebase'
 import { getFirestore } from '../../service/fireBaseConfig'
 import CompraFinalizada from '../ModalCompra/CompraFinalizada'
+import Spiner from '../Spinner/Spinner'
 
 export const Cart = () => {
     const [orderId, setOrderId] = useState(null)
+    const [loading, setLoading] = useState(true)
     const [showModal, setShowModal] = useState(false)
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
@@ -50,6 +52,7 @@ export const Cart = () => {
                
             })
             .catch(err => console.log(err))
+            .finally(() => setLoading(false))
 
 
         //Actualiza todos los items que estan en el listado de Cart del cartContext
@@ -57,7 +60,7 @@ export const Cart = () => {
 
 
         const batch = dbQ.batch();
-        console.log(batch)
+        
 
         //Por cada item, restarl del stockla cantidad de el carrito
         itemsToUpdate.get()
@@ -132,7 +135,7 @@ export const Cart = () => {
                                 <h4 className="card-title">Comprar Carrito</h4>
                                 <h6 className="card-subtitle mb-2 text-muted">Cantidad de productos: {cantItem()} </h6>
                                 <p className="card-text">Total: {totalPrice()}  </p>
-                                <form onSubmit={generarOrden}
+                                 <form onSubmit={generarOrden}
                                     className="container cartForm">
                                     <div class="col-md-6 ">
                                         <label for="nombre" className="form-label">Nombre</label>
@@ -147,11 +150,11 @@ export const Cart = () => {
                                         <label for="tel" className="form-label">Teléfono</label>
                                         <input type="text" value={tel} onChange={(e) => setTel(e.target.value)} className="form-control" id="tel" />
                                     </div>
-                                    <button className="card-link m-2" onClick={() => setShowModal(true)} >Terminar compra</button>
-                                </form>
+                                  <button className="card-link m-2" onClick={() => setShowModal(true)} >Terminar compra</button>
+                                </form> 
                             </div>
                         </div>
-                        <CompraFinalizada show={showModal} onHide={handleHide} orderId={orderId} total={totalPrice()} />
+                     <CompraFinalizada show={showModal} onHide={handleHide} orderId={orderId} total={totalPrice()} />
                     </>
 
             }
