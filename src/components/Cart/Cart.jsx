@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useCartContext } from '../../context/CartContext'
-import '../../index.css'
+
 import { CartEmpty } from './CartEmpty'
 import firebase from 'firebase'
 import { getFirestore } from '../../service/fireBaseConfig'
