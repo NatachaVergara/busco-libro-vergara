@@ -1,8 +1,8 @@
-import { getFirestore } from '../../service/fireBaseConfig'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import Spiner from '../Spinner/Spinner';
 import ItemDetail from './ItemDetail';
+import getItem from '../../Utils/getItem';
 
 
 
@@ -13,22 +13,19 @@ const ItemDetailContainer = () => {
     const { id } = useParams()
 
     useEffect(() => {
-        const bdQuery = getFirestore()
-
-        //busca y trae solo 1 elemento segun el id que llega por parámetro
-        bdQuery.collection('items').doc(id).get() //traer 1 por el id
-            .then(resp => setItem({ id: resp.id, ...resp.data() }))
-            .catch(err => console.log(err))
-            .finally(() => setLoading(false))
-
+        //traigo la función con la llamada al catalogo y traigo un item en particular de la db
+        // eslint-disable-next-line no-unused-vars
+        const itemsDB = getItem(id, setItem, setLoading)        
     }, [id])
 
     
 
     return (
         <div>
-
-            {loading ? <Spiner mensaje="Estamos trayendo su libro....." /> : <ItemDetail item={item} key={id} />}
+            {loading ?
+                <Spiner mensaje="Estamos trayendo su libro....." /> :
+                <ItemDetail item={item} key={id} />
+            }
         </div>
     )
 }

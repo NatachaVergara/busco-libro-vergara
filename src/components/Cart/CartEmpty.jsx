@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 import '../../index.css'
-export const CartEmpty = ({ h1 }) => {
+const CartEmpty = ({ h1 }) => {
 
     return (
         <div className="container d-flex flex-column align-items-center">
@@ -15,3 +15,5 @@ export const CartEmpty = ({ h1 }) => {
         </div>
     )
 }
+
+export default CartEmpty
