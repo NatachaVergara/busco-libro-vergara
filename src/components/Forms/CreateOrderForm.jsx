@@ -11,7 +11,7 @@ const CreateOrderForm = ({ createOrder, name, setName, tel, setTel, email, setEm
 
     return (
         <form
-            autocomplete="off"
+            autoComplete="off"
             onSubmit={createOrder}
             className="container cartForm">
             <div class="col-md-6 ">
@@ -26,7 +26,7 @@ const CreateOrderForm = ({ createOrder, name, setName, tel, setTel, email, setEm
             <div class="col-md-6 ">
                <label for="emailVal"   className="form-label">Repita su email</label>
                
-                <input type="text" placeholder="tiene que ser exactamente igual" value={emailVal} onChange={(e) => setEmailVal(e.target.value)} className={emailVal !== email ? "form-control bg-danger" : "form-control"} id="emailVal"    />
+                <input type="text" placeholder="email@mail.com" value={emailVal} onChange={(e) => setEmailVal(e.target.value)} className={emailVal !== email ? "form-control bg-danger" : "form-control"} id="emailVal"    />
             </div>
             <div class="col-md-6 ">
                 <label for="tel" className="form-label">Teléfono</label>
