@@ -103,7 +103,7 @@ const Cart = () => {
                             className="card-link m-5">
                             <button
                                 type="button"
-                                className="btn btn-outline-danger mt-2 mt-md-0 ms-md-5 ">  Seguir comprando
+                                className="btn btn-outline-success mt-2 mt-md-0 ms-md-5 ">  Seguir comprando
                             </button>
                         </Link>
                         <div
