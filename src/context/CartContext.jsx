@@ -1,4 +1,4 @@
-/* eslint-disable no-unused-vars */
+
 import { createContext, useState, useContext } from 'react'
 
 const CartContext = createContext([])
@@ -33,13 +33,13 @@ const CartContextProvider = ({ children }) => {
         return cartList.reduce((acum, item) => acum = acum + item.cantidad, 0)
 
     }
-    
-    
-  
+
+
+
     const totalPrice = () => {
         return cartList.reduce((acum, item) => (acum += item.price * item.cantidad), 0)
     }
-    //el 0 da el valor inicial
+
 
 
     const eraseCart = () => {
@@ -55,11 +55,8 @@ const CartContextProvider = ({ children }) => {
                 addItem,
                 eraseCart,
                 eraseItem,
-                cantItem,                
+                cantItem,
                 totalPrice
-                
-                
-                
             }}>
 
             {children}
