@@ -6,7 +6,7 @@ import firebase from 'firebase'
 import { useCartContext } from '../../context/CartContext'
 import CartEmpty from './CartEmpty'
 import ModalForm from '../Modal/Modal'
-import postOrder from '../../utiles/postOrder'
+import postOrder from '../../utils/postOrder'
 import CreateOrderForm from '../Forms/CreateOrderForm'
 
 const Cart = () => {
