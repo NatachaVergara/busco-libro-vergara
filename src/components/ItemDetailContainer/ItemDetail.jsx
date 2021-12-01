@@ -13,7 +13,7 @@ const ItemDetail = ({ item }) => {
     const { addItem } = useCartContext()
 
 
-    const onAdd = (count) => {       
+    const onAdd = (count) => {
         addItem(item, count)
         setWasClick(true)
         setCount(count)
@@ -38,8 +38,8 @@ const ItemDetail = ({ item }) => {
                                 stocks={item.stock}
                             /> :
                             <ul >
-                                <Link to='/'><button type="button" class="btn btn-outline-secondary text-dark mb-1">Seguir comprando</button></Link>
-                                <Link to='/cart'><button type="button" class="btn btn-outline-dark ">Terminar compra</button></Link>
+                                <Link to='/'><button type="button" className="btn btn-outline-secondary text-dark mb-1">Seguir comprando</button></Link>
+                                <Link to='/cart'><button type="button" className="btn btn-outline-dark ">Terminar compra</button></Link>
                             </ul>
                         }
 
@@ -49,11 +49,11 @@ const ItemDetail = ({ item }) => {
                     <h1 className="card-title ms-2 mb-3 text-center text-dark"> {item.title}</h1>
                     <h4 className="text-center" >Sinopsis</h4>
                     <p className="card-text text-dark"> {item.resumen}  </p>
-                    <ul className="list-group list-group-flush">                        
+                    <ul className="list-group list-group-flush">
                         <li className="list-group-item text-dark fs-5">Categoría: {item.categoryId} </li>
                         <li className="list-group-item text-dark fs-5">Precio: ${item.price} </li>
                     </ul>
-                   
+
                 </div>
             </div>
         </div>

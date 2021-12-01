@@ -40,7 +40,7 @@ const ItemCount = ({ stocks, initial, onAdd }) => {
                 {stocks === 0 ? 'No hay stock' : `stock: ${stocks - count}`} </p>
             <button
                 type="button"
-                class="btn btn-secondary"
+                className="btn btn-secondary"
                 onClick={() => onAdd(count)}
                 disabled={count === 0}>Agregar al carrito </button>
             <Link to='/'
