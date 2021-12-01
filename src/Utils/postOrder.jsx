@@ -12,12 +12,12 @@ const postOrder = (order, setOrderId, cartList) => {
     //.finally(() => setLoading(false))
 
 
-    //Actualiza todos los items que estan en el listado de Cart del cartContext
+    
     const itemsToUpdate = db.collection('items').where(firebase.firestore.FieldPath.documentId(), 'in', cartList.map(i => i.id))
     const batch = db.batch();
 
 
-    //Por cada item, restar del stock la cantidad de el carrito
+
     itemsToUpdate.get()
         .then(collection => {
             collection.docs.forEach(docSnapshot => {
