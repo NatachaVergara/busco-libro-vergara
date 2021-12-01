@@ -6,14 +6,16 @@ import firebase from 'firebase'
 //Componentes
 import { useCartContext } from '../../context/CartContext'
 import CartEmpty from './CartEmpty'
-import CompraFinalizada from '../ModalCompra/CompraFinalizada'
-import postOrder from '../../Utils/postOrder'
+import ModalForm from '../Modal/Modal'
+import postOrder from '../../utils/postOrder'
+import CreateOrderForm from '../Forms/CreateOrderForm'
 
 const Cart = () => {
     const [orderId, setOrderId] = useState(null)
     const [showModal, setShowModal] = useState(false)
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
+    const [emailVal, setEmailVal] = useState('')
     const [tel, setTel] = useState('')
 
 
@@ -22,7 +24,7 @@ const Cart = () => {
     const { cartList, eraseCart, eraseItem, cantItem, totalPrice } = useCartContext()
 
 
-    const generarOrden = (e) => {
+    const createOrder = (e) => {
         e.preventDefault();
 
         const order = {}
@@ -38,7 +40,7 @@ const Cart = () => {
 
 
         //traigo la función con el envió de la orden a la db
-        const post = postOrder(order, setOrderId, cartList)
+        postOrder(order, setOrderId, cartList)
 
     };
 
@@ -50,7 +52,12 @@ const Cart = () => {
     }
 
 
-
+    const onHandleClick = () => {
+        setShowModal(true)
+        // if (emailVal !== email) {
+        //     alert('El email tiene que coincidir')
+        // }
+    }
     return (
         <div>
             {cartList.length === 0 ?
@@ -105,29 +112,25 @@ const Cart = () => {
                                 <h4 className="card-title">Comprar Carrito</h4>
                                 <h6 className="card-subtitle mb-2 text-muted">Cantidad de productos: {cantItem()} </h6>
                                 <p className="card-text">Total: {totalPrice()}  </p>
-                                <form
-                                    onSubmit={generarOrden}
-                                    className="container cartForm">
-                                    <div class="col-md-6 ">
-                                        <label for="nombre" className="form-label">Nombre</label>
-                                        <input type="text" placeholder="john Doe" value={name} onChange={(e) => setName(e.target.value)} className="form-control" id="nombre" />
-                                    </div>
-
-                                    <div class="col-md-6 ">
-                                        <label for="email" className="form-label">Email</label>
-                                        <input type="email" placeholder="email@mail.com" value={email} onChange={(e) => setEmail(e.target.value)} className="form-control" id="email" />
-                                    </div>
-                                    <div class="col-md-6 ">
-                                        <label for="tel" className="form-label">Teléfono</label>
-                                        <input type="text" placeholder="01144418775 / 1524971896" value={tel} onChange={(e) => setTel(e.target.value)} className="form-control" id="tel" />
-                                    </div>
-                                    <button className="card-link m-2 btn btn-success"
-                                        disabled={name.length === 0 || email.length === 0 || tel.length === 0}
-                                        onClick={() => setShowModal(true)} >Terminar compra</button>
-                                </form>
+                                <CreateOrderForm
+                                    createOrder={createOrder}
+                                    name={name}
+                                    setName={setName}
+                                    tel={tel}
+                                    setTel={setTel}
+                                    email={email}
+                                    setEmail={setEmail}
+                                    emailVal={emailVal}
+                                    setEmailVal={setEmailVal}
+                                    onHandleClick={onHandleClick}
+                                />
                             </div>
                         </div>
-                        <CompraFinalizada show={showModal} nombre={name} onHide={handleHide} orderId={orderId} total={totalPrice()} />
+                        <ModalForm show={showModal}
+                            nombre={name}
+                            onHide={handleHide}
+                            orderId={orderId}
+                            total={totalPrice()} />
                     </>
 
             }

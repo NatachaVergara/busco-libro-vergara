@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
+//Componentes
 import Spiner from '../Spinner/Spinner';
 import ItemDetail from './ItemDetail';
-import getItem from '../../Utils/getItem';
-
-
+import getItem from '../../utils/getItem';
 
 const ItemDetailContainer = () => {
     const [item, setItem] = useState([])
@@ -12,10 +11,8 @@ const ItemDetailContainer = () => {
 
     const { id } = useParams()
 
-    useEffect(() => {
-        //traigo la función con la llamada al catalogo y traigo un item en particular de la db
-        // eslint-disable-next-line no-unused-vars
-        const itemsDB = getItem(id, setItem, setLoading)        
+    useEffect(() => {      
+        getItem(id, setItem, setLoading)        
     }, [id])
 
     

@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useCartContext } from '../../context/CartContext'
 import ItemCount from "../ItemCount/ItemCount"
-import './itemDetail.css'
+
 
 const ItemDetail = ({ item }) => {
     const [wasClick, setWasClick] = useState(false)
@@ -30,13 +30,12 @@ const ItemDetail = ({ item }) => {
                         className="  card-img-top container"
                         style={{ width: "150px", height: "150px" }}
                         alt="img" />
-                    <div className="card-body d-none d-md-flex flex-column justify-content-center">
+                    <div className="card-body d-flex d-md-flex flex-column justify-content-center">
                         {wasClick === false ?
                             <ItemCount
                                 onAdd={onAdd}
                                 initial={1}
                                 stocks={item.stock}
-
                             /> :
                             <ul >
                                 <Link to='/'><button type="button" class="btn btn-outline-secondary text-dark mb-1">Seguir comprando</button></Link>
@@ -54,23 +53,7 @@ const ItemDetail = ({ item }) => {
                         <li className="list-group-item text-dark fs-5">Categoría: {item.categoryId} </li>
                         <li className="list-group-item text-dark fs-5">Precio: ${item.price} </li>
                     </ul>
-                    <div className="card-body d-flex d-md-none flex-column justify-content-center">
-                        {wasClick === false ?
-                            <ItemCount
-                                onAdd={onAdd}
-                                initial={1}
-                                stocks={item.stock}
-                            /> :
-                            <ul >
-                                <Link to='/'>
-                                    <button type="button" class="btn btn-outline-secondary text-dark mb-1">Seguir comprando</button>
-                                </Link>
-                                <Link to='/cart'>
-                                    <button type="button" class="btn  btn-outline-dark">Terminar compra</button>
-                                </Link>
-                            </ul>
-                        }
-                    </div>
+                   
                 </div>
             </div>
         </div>
