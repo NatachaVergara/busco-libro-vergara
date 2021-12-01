@@ -45,7 +45,7 @@ const ItemCount = ({ stocks, initial, onAdd }) => {
                 disabled={count === 0}>Agregar al carrito </button>
             <Link to='/'
                 type="button"
-                class="btn btn-secondary mt-2">Volver al catálogo
+                className="btn btn-secondary mt-2">Volver al catálogo
             </Link>
 
         </div>
