@@ -1,5 +1,4 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable jsx-a11y/anchor-is-valid */
+
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import firebase from 'firebase'
@@ -7,7 +6,7 @@ import firebase from 'firebase'
 import { useCartContext } from '../../context/CartContext'
 import CartEmpty from './CartEmpty'
 import ModalForm from '../Modal/Modal'
-import postOrder from '../../utils/postOrder'
+import postOrder from '../../utiles/postOrder'
 import CreateOrderForm from '../Forms/CreateOrderForm'
 
 const Cart = () => {

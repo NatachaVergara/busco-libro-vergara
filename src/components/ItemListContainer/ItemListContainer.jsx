@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 //Componentes
 import ItemList from "./ItemList"
 import Spiner from '../Spinner/Spinner'
-import getItems from '../../utils/getItems'
+import getItems from '../../utiles/getItems'
 
 const ItemListContainer = () => {
     const [items, setItems] = useState([])    

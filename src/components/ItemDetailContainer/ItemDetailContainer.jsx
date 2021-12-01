@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 //Componentes
 import Spiner from '../Spinner/Spinner';
 import ItemDetail from './ItemDetail';
-import getItem from '../../utils/getItem';
+import getItem from '../../utiles/getItem';
 
 const ItemDetailContainer = () => {
     const [item, setItem] = useState([])
