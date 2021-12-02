@@ -77,8 +77,9 @@ const Checkout = () => {
             <ModalForm show={showModal}
                 nombre={name}
                 onHide={handleHide}
-                orderId={orderId}
-                total={totalPrice()} />
+                orderid={orderId}
+                total={totalPrice()}
+            />
         </>
     )
 }

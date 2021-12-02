@@ -15,7 +15,7 @@ const CreateOrderForm = ({ createOrder, name, setName, tel, setTel, email, setEm
             onSubmit={createOrder}
             className="container cartForm">
             <div className="col-md-6 ">
-                <label for="nombre"
+                <label
                     className="form-label">Nombre y Apellido</label>
                 <input type="text"
                     placeholder="john Doe" value={name}
@@ -24,7 +24,7 @@ const CreateOrderForm = ({ createOrder, name, setName, tel, setTel, email, setEm
             </div>
 
             <div className="col-md-6 ">
-                <label for="email"
+                <label 
                     className="form-label">Email</label>
                 <input
                     type="text"
@@ -33,7 +33,7 @@ const CreateOrderForm = ({ createOrder, name, setName, tel, setTel, email, setEm
                     className="form-control" id="email" />
             </div>
             <div className="col-md-6 ">
-                <label for="emailVal"
+                <label
                     className="form-label">Repita su email</label>
                
                 <input type="text"
@@ -42,7 +42,7 @@ const CreateOrderForm = ({ createOrder, name, setName, tel, setTel, email, setEm
                     className={emailVal !== email ? "form-control bg-danger" : "form-control"} id="emailVal" />
             </div>
             <div className="col-md-6 ">
-                <label for="tel"
+                <label 
                     className="form-label">Teléfono</label>
                 <input type="text"
                     placeholder="01144418775 / 1524971896"
