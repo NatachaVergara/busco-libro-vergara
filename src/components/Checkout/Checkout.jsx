@@ -42,9 +42,14 @@ const Checkout = () => {
         eraseCart()
     }
 
+    
 
     const onHandleClick = () => {
-        setShowModal(true)
+        setTimeout(() => {
+            setShowModal(true)
+        }, 1000);
+       
+       
 
     }
     return (
