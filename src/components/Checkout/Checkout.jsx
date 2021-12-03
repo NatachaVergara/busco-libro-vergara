@@ -55,7 +55,7 @@ const Checkout = () => {
     return (
         <>
             <div className="card container vw-100 mt-3 mb-5 text-center ">               
-                <h4 className="card-title mt-3">Finalizar compra</h4>
+                <h4 className="card-title mt-3  ">Finalizar compra</h4>
                 <div className="row d-flex align-items-center mb-3">
                  <div>
                 { cartList.map( item =>                                           

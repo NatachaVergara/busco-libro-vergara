@@ -8,7 +8,7 @@ const Cart = () => {
     const { cartList, eraseCart, eraseItem } = useCartContext()
 
 
-    
+
     return (
         <div>
             {cartList.length === 0 ?
@@ -45,26 +45,31 @@ const Cart = () => {
             }
             {
                 cartList.length === 0 ? null :
-                    <>
+                    <div className="d-flex  flex-column ms-5 flex-md-row justify-content-center ">
+                        <div className="me-md-3 mb-2">
                         <button type="button"
-                            className="btn btn-outline-secondary ms-5"
-                            onClick={eraseCart}>Eliminar carrito
+                            className="btn btn-outline-secondary  "
+                            onClick={eraseCart}> Eliminar carrito
                         </button>
+                        </div>
+                        <div className=" me-md-3 mb-2">
                         <Link to='/'
-                            className="card-link m-5">
+                            className="card-link">
                             <button
                                 type="button"
-                                className="btn btn-outline-success mt-2 mt-md-0 ms-md-5 ">  Seguir comprando
+                                className="btn btn-outline-success">  Seguir comprando
                             </button>
-                        </Link>
-                        <Link to='/checkout'
-                            className="card-link m-5">
+                            </Link>
+                        </div>
+                        <div className="me-md-3">
+                        <Link to='/checkout' className="card-link" >
                             <button
                                 type="button"
-                                className="btn btn-outline-success mt-2 mt-md-0 ms-md-5 ">  Finalizar Compra
+                                className="btn btn-outline-success">  Finalizar Compra
                             </button>
-                        </Link>
-                    </>
+                            </Link>
+                        </div>
+                    </div>
             }
 
 

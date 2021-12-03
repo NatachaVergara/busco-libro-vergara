@@ -23,12 +23,12 @@ const ItemDetail = ({ item }) => {
 
     return (
 
-        <div className="animate__animated animate__fadeInDown container d-flex justify-content-center" >
+        <div className="animate__animated animate__fadeInDown container d-flex justify-content-center  p-3" >
             <div className="card mt-2 mb-2 d-md-flex flex-md-row" >
                 <div className="d-flex flex-column justify-content-center" >
                     <h6 className="text-center text-dark mt-3"> {item.autor} </h6>
                     <img src={item.pictureUrl}
-                        className="  card-img-top container"
+                        className="card-img-top container rounded"
                         style={{ width: "150px", height: "150px" }}
                         alt="img" />
                     <div className="card-body d-flex d-md-flex flex-column justify-content-center">
