@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import "../../index.css"
 
 const CreateOrderForm = ({ createOrder, name, setName, tel, setTel, email, setEmail, emailVal, setEmailVal, onHandleClick }) => {
     const noValidate =

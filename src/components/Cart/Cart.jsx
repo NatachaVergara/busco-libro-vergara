@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import "../../index.css"
 //Componentes
 import { useCartContext } from '../../context/CartContext'
 import CartEmpty from './CartEmpty'
@@ -65,7 +66,7 @@ const Cart = () => {
                         <Link to='/checkout' className="card-link" >
                             <button
                                 type="button"
-                                className="btn btn-outline-success">  Finalizar Compra
+                                className="btn btn-outline-success btnFinalizar">  Finalizar Compra
                             </button>
                             </Link>
                         </div>
