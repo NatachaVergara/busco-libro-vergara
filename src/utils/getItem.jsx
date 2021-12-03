@@ -1,7 +1,7 @@
 import { getFirestore } from '../service/fireBaseConfig'
 
 
-const getItem = (id, setItem, setLoading) => {    
+const getItem =  (id, setItem, setLoading) => {    
     const dbQuery = getFirestore()
     
     dbQuery.collection('items').doc(id).get() 

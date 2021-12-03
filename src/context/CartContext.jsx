@@ -10,11 +10,13 @@ export const useCartContext = () => {
 
 const CartContextProvider = ({ children }) => {
     const [cartList, setCartList] = useState([])
-
+    
 
     const addItem = (item, cantidad) => {
         let inCartList = cartList.find((cartItem) => cartItem.id === item.id);
 
+        
+        
         if (inCartList) {
             inCartList.cantidad += cantidad
             setCartList([...cartList])
@@ -44,6 +46,7 @@ const CartContextProvider = ({ children }) => {
 
     const eraseCart = () => {
         setCartList([])
+        
     }
 
 

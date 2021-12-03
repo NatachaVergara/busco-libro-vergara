@@ -17,6 +17,7 @@ const ItemDetail = ({ item }) => {
         addItem(item, count)
         setWasClick(true)
         setCount(count)
+       
     }
 
 

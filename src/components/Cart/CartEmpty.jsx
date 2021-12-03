@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom'
 import '../../index.css'
 const CartEmpty = ({ h1 }) => {
 
+    
+
     return (
         <div className="container d-flex flex-column align-items-center">
             <h1 className="align-self-center mt-2">{h1} </h1>
