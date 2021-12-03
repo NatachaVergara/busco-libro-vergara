@@ -42,37 +42,43 @@ const Checkout = () => {
         eraseCart()
     }
 
-    
+
 
     const onHandleClick = () => {
         setTimeout(() => {
             setShowModal(true)
         }, 1000);
-       
-       
+
+
 
     }
     return (
         <>
-            <div
-                className="card container vw-100 mt-3 mb-5 text-center ">
-                <div className="card-body">
-                    <h4 className="card-title">Finalizar compra</h4>
-                    <h6 className="card-subtitle mb-2 text-muted">Cantidad de productos: {cantItem()} </h6>
-                    <p className="card-text">Total: {totalPrice()}  </p>
-                    <CreateOrderForm
-                        createOrder={createOrder}
-                        name={name}
-                        setName={setName}
-                        tel={tel}
-                        setTel={setTel}
-                        email={email}
-                        setEmail={setEmail}
-                        emailVal={emailVal}
-                        setEmailVal={setEmailVal}
-                        onHandleClick={onHandleClick}
-                    />
+            <div className="card container vw-100 mt-3 mb-5 text-center ">               
+                <h4 className="card-title mt-3">Finalizar compra</h4>
+                <div className="row d-flex align-items-center mb-3">
+                 <div>
+                { cartList.map( item =>                                           
+                    <img src={item.pictureUrl} alt="img" className="col-1 me-1 mt-1 rounded" style={{ width: "150px", height: "150px" }} />)
+                }
+                    </div>
                 </div>
+                <h6 className="card-subtitle mb-2 text-muted">Productos en total {cantItem()} </h6>
+                <p className="card-text">Suma total de su orden: {totalPrice()}  </p>
+
+                <CreateOrderForm
+                    createOrder={createOrder}
+                    name={name}
+                    setName={setName}
+                    tel={tel}
+                    setTel={setTel}
+                    email={email}
+                    setEmail={setEmail}
+                    emailVal={emailVal}
+                    setEmailVal={setEmailVal}
+                    onHandleClick={onHandleClick}
+                />
+
             </div>
             <ModalForm show={showModal}
                 nombre={name}

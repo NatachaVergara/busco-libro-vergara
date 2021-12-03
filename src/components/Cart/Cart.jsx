@@ -1,4 +1,3 @@
-
 import { Link } from 'react-router-dom'
 //Componentes
 import { useCartContext } from '../../context/CartContext'
@@ -48,7 +47,7 @@ const Cart = () => {
                 cartList.length === 0 ? null :
                     <>
                         <button type="button"
-                            className="btn btn-outline-secondary ms-5 "
+                            className="btn btn-outline-secondary ms-5"
                             onClick={eraseCart}>Eliminar carrito
                         </button>
                         <Link to='/'
