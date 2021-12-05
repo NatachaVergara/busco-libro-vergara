@@ -7,7 +7,7 @@ import CartEmpty from './CartEmpty'
 
 const Cart = () => {
     const { cartList, eraseCart, eraseItem } = useCartContext()
-
+    
 
 
     return (

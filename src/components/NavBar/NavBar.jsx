@@ -1,7 +1,23 @@
+import { useState } from "react";
 import { Link } from "react-router-dom"
+import { auth } from '../../service/fireBaseConfig'
+
 import CartWidget from "../CartWidget/CartWidget"
 
+
 const NavBar = () => {
+
+    const [user, setUser] = useState({});
+
+    auth.onAuthStateChanged((currentUser) => {
+        setUser(currentUser);
+    });
+
+    const logout = () => {
+        auth.signOut()
+    }
+
+
     return (
         <header>
             <nav className="navbar navbar-expand-lg navbar-dark bg-primary ">
@@ -38,16 +54,44 @@ const NavBar = () => {
                                 </li>
                             </ul>
                             <ul className="navbar-nav mt-1 d-flex flex-row justify-content-evenly">
+
                                 <li className="nav-item me-md-1">
-                                    <button
-                                        type="button"
-                                        className="btn btn-outline-light ">Login</button>
+
+
+                                    {!user ?
+
+                                        <Link to={'/register'}>
+                                            <button
+                                                type="button"
+                                                className="btn btn-outline-light"> Register </button>
+                                        </Link>
+                                        :
+
+                                        <p>{user?.email}</p>
+
+                                    }
                                 </li>
                                 <li className="nav-item me-md-1">
-                                    <button
-                                        type="button"
-                                        className="btn btn-outline-light">Sign in</button>
-                                </li>
+                               { user ?
+                                    
+                                        <button
+                                            type="button"
+                                            onClick={logout}
+                                            className="btn btn-outline-light">Logout
+                                        </button>
+                                        :
+
+                                        <Link to={'/login'}>
+                                            <button
+                                                type="button"
+                                                className="btn btn-outline-light"> Login </button>
+                                        </Link>
+                                
+                                }
+
+                                    </li>
+
+
                             </ul>
                             <Link to={'/cart'}
                                 className="mt-1 align-self-center text-decoration-none">

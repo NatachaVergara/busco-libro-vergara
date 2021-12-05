@@ -5,6 +5,13 @@ import { useCartContext } from '../../context/CartContext'
 import ModalForm from '../Modal/Modal'
 import postOrder from '../../utils/postOrder'
 import CreateOrderForm from '../Forms/CreateOrderForm'
+import { auth } from '../../service/fireBaseConfig'
+import { Link } from 'react-router-dom'
+
+
+
+
+
 const Checkout = () => {
     const [orderId, setOrderId] = useState(null)
     const [showModal, setShowModal] = useState(false)
@@ -12,8 +19,13 @@ const Checkout = () => {
     const [email, setEmail] = useState('')
     const [emailVal, setEmailVal] = useState('')
     const [tel, setTel] = useState('')
+    const [user, setUser] = useState({});
     const { cartList, eraseCart, cantItem, totalPrice } = useCartContext()
 
+
+    auth.onAuthStateChanged((currentUser) => {
+        setUser(currentUser);
+    });
 
     const createOrder = (e) => {
         e.preventDefault();
@@ -52,41 +64,63 @@ const Checkout = () => {
 
 
     }
-    return (
-        <>
-            <div className="card container vw-100 mt-3 mb-5 text-center ">               
-                <h4 className="card-title mt-3  ">Finalizar compra</h4>
-                <div className="row d-flex align-items-center mb-3">
-                 <div>
-                { cartList.map( item =>                                           
-                    <img src={item.pictureUrl} alt="img" className="col-1 me-1 mt-1 rounded" style={{ width: "150px", height: "150px" }} />)
-                }
+
+
+
+
+    
+    return (        
+        <div>
+            {!user ?
+                <div className="card container vw-100 mt-3 mb-5 text-center ">
+                    <Link to={'/register'}> Para terminar la compra, logeese a su cuenta</Link>
+                    
                     </div>
+                    :
+
+
+
+
+
+
+
+                <div className="card container vw-100 mt-3 mb-5 text-center ">
+                    <h4 className="card-title mt-3  ">Finalizar compra</h4>
+                    <div className="row d-flex align-items-center mb-3">
+                        <div>
+                            {cartList.map(item =>
+                                <img src={item.pictureUrl} alt="img" className="col-1 me-1 mt-1 rounded" style={{ width: "150px", height: "150px" }} />)
+                            }
+
+
+                            <h6 className="card-subtitle mb-2 text-muted">Productos en total {cantItem()} </h6>
+                            <p className="card-text">Suma total de su orden: {totalPrice()}  </p>
+                        </div>
+                    
+                    </div>
+                
+                    <CreateOrderForm
+                        createOrder={createOrder}
+                        name={name}
+                        setName={setName}
+                        tel={tel}
+                        setTel={setTel}
+                        email={email}
+                        setEmail={setEmail}
+                        emailVal={emailVal}
+                        setEmailVal={setEmailVal}
+                        onHandleClick={onHandleClick}
+                    />
+
                 </div>
-                <h6 className="card-subtitle mb-2 text-muted">Productos en total {cantItem()} </h6>
-                <p className="card-text">Suma total de su orden: {totalPrice()}  </p>
-
-                <CreateOrderForm
-                    createOrder={createOrder}
-                    name={name}
-                    setName={setName}
-                    tel={tel}
-                    setTel={setTel}
-                    email={email}
-                    setEmail={setEmail}
-                    emailVal={emailVal}
-                    setEmailVal={setEmailVal}
-                    onHandleClick={onHandleClick}
-                />
-
-            </div>
+            }
             <ModalForm show={showModal}
                 nombre={name}
                 onHide={handleHide}
                 orderid={orderId}
                 total={totalPrice()}
             />
-        </>
+        </div>
     )
 }
 
