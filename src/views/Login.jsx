@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { auth } from '../../service/fireBaseConfig'
+import { auth } from '../service/fireBaseConfig'
 
 
-const LoginContainer = () => {
+const Login = () => {
     const [loginEmail, setLoginEmail] = useState('')
     const [loginPassword, setLoginPassword] = useState('')
 
@@ -74,4 +74,4 @@ const LoginContainer = () => {
     )
 }
 
-export default LoginContainer
+export default Login

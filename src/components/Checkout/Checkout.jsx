@@ -72,18 +72,24 @@ const Checkout = () => {
     return (        
         <div>
             {!user ?
-                <div className="card container vw-100 mt-3 mb-5 text-center ">
-                    <Link to={'/register'}> Para terminar la compra, logeese a su cuenta</Link>
+                <div className="d-flex flex-column align-items-center mt-5">
+                    <Link to={'/register'}>
+                        <button type="button"
+                            className="btn btn-info mb-5">
+                       Registrarse
+                        </button>
+                    </Link>
+                  
+                    <Link to={'/login'}>
+                        <button type="button"
+                            className="btn btn-info">
+                            Login
                     
+                     </button>
+                    </Link>
+                   
                     </div>
                     :
-
-
-
-
-
-
-
                 <div className="card container vw-100 mt-3 mb-5 text-center ">
                     <h4 className="card-title mt-3  ">Finalizar compra</h4>
                     <div className="row d-flex align-items-center mb-3">

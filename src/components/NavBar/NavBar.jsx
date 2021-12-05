@@ -63,7 +63,7 @@ const NavBar = () => {
                                         <Link to={'/register'}>
                                             <button
                                                 type="button"
-                                                className="btn btn-outline-light"> Register </button>
+                                                className="btn btn-outline-light"> Registrese </button>
                                         </Link>
                                         :
 

@@ -5,8 +5,8 @@ import Cart from '../components/Cart/Cart';
 import Checkout from '../components/Checkout/Checkout';
 import ItemDetailContainer from '../components/ItemDetailContainer/ItemDetailContainer';
 import ItemListContainer from '../components/ItemListContainer/ItemListContainer';
-import LoginContainer from '../views/Login/LoginContainer';
-import RegisterContainer from '../views/RegisterContainer';
+import Login from '../views/Login';
+import Register from '../views/Register';
 
 
 
@@ -21,14 +21,8 @@ const RoutesApp = () => {
             <Route path="/item/:id" element={<ItemDetailContainer />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/checkout" element={<Checkout />} />
-
-
-            <Route path="/register" element={<RegisterContainer />} />
-
-            <Route path="/login" element={<LoginContainer />} />
-            
-            
-            
+            <Route path="/register" element={<Register />} />
+            <Route path="/login" element={<Login />} />
         </Routes>
     )
 }

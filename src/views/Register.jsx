@@ -1,16 +1,12 @@
 import React, { useState } from 'react'
 import { auth} from '../service/fireBaseConfig'
 import { Link } from 'react-router-dom'
-import './register.css'
 
-const RegisterContainer = () => {
+
+const Register = () => {
     const [registerEmail, setRegisterEmail] = useState('')
     const [registerPassword, setRegisterPassword] = useState('')
     const [passwordVald, setPasswordVald] = useState('')
-
-    
-
-
 
     const register = async (e) => {
         try {
@@ -33,15 +29,6 @@ const RegisterContainer = () => {
             passwordVald.length > 0 &&
             registerPassword === passwordVald
         )
-
-
-    
-
-
-    
-
-
-
 
     return (
         <form className="d-flex flex-column align-items-center">
@@ -75,20 +62,16 @@ const RegisterContainer = () => {
             </div>
             
             <button
-                type="submit"
-              
+                type="submit"              
                     className="btn btn-primary mt-3"
                     disabled={noValidate}
                     onClick={register}                    
             >
                 <Link to={'/'}
                     className="text-decoration-none">
-                Submit
+                Registrar
                 </Link>
-            
             </button>
-           
-
             <Link to="/login" className="mt-3">¿Ya tiene cuenta?</Link>
 
 
@@ -96,4 +79,4 @@ const RegisterContainer = () => {
     )
 }
 
-export default RegisterContainer
+export default Register
