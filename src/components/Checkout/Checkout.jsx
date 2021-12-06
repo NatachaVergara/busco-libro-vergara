@@ -95,7 +95,7 @@ const Checkout = () => {
                     <div className="row d-flex align-items-center mb-3">
                         <div>
                             {cartList.map(item =>
-                                <img src={item.pictureUrl} alt="img" className="col-1 me-1 mt-1 rounded" style={{ width: "150px", height: "150px" }} />)
+                                <img src={item.pictureUrl} alt="img" className="col-1 me-1 mt-1 mb-2 rounded" style={{ width: "150px", height: "150px" }} />)
                             }
 
 
