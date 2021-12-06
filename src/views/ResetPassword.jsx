@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { auth } from '../service/fireBaseConfig'
 
 
@@ -9,6 +10,7 @@ const ResetPassword = () => {
     const resetPassword = (e) => {
         e.preventDefault();
         auth.sendPasswordResetEmail(loginEmail)
+        alert(`Revise su email`)
     }
 
 
@@ -23,8 +25,14 @@ const ResetPassword = () => {
                
             />
             <label >Password</label>
-            <button type="button" className="btn btn-outline-success text-center"
-                onClick={resetPassword}>Resetear contraseña</button>
+           
+            <button type="button"
+                className="btn btn-outline-success text-center"
+                onClick={resetPassword}>
+                <Link to={'/login'} className="text-decoration-none">Resetear contraseña
+                </Link>
+            </button>
+           
         </div>
 
 

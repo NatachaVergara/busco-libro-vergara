@@ -66,7 +66,7 @@ const NavBar = () => {
                                                 className="btn btn-outline-light"> Registrese </button>
                                         </Link>
                                         :
-                                        <button class="btn btn-success">{user?.email}</button>
+                                        <button className="btn btn-success">{user?.email}</button>
 
 
                                     }
