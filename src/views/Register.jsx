@@ -14,9 +14,8 @@ const Register = () => {
     const register = async (e) => {
         try {
             e.preventDefault()
-            let user = await auth.createUserWithEmailAndPassword(registerEmail, registerPassword)
-            console.log(user)
-
+            await auth.createUserWithEmailAndPassword(registerEmail, registerPassword)
+            
             setTimeout(() => {
                 setShowModal(true)
             }, 1000);

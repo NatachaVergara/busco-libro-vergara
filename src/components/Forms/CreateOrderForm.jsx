@@ -45,7 +45,7 @@ const CreateOrderForm = ({ createOrder, name, setName, tel, setTel, email, setEm
                     <input type="text"
                         placeholder="email@mail.com"
                         value={emailVal} onChange={(e) => setEmailVal(e.target.value)}
-                        className={emailVal !== email ? "form-control bg-danger" : "form-control"} id="emailVal" />
+                        className={emailVal !== email ? "form-control bg-light text-dark" : "form-control"} id="emailVal" />
                 </div>
                 <div className="col-md-6 ">
                     <label

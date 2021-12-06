@@ -19,8 +19,8 @@ const Login = () => {
 
         try {
             e.preventDefault()
-            let user = await auth.signInWithEmailAndPassword(loginEmail, loginPassword)
-            console.log(user)
+            await auth.signInWithEmailAndPassword(loginEmail, loginPassword)
+
             setTimeout(() => {
                 setShowModal(true)
             }, 1000);
