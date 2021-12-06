@@ -52,18 +52,15 @@ const Checkout = () => {
     const handleHide = () => {
         setShowModal(false)
         eraseCart()
-    }
+    };
 
 
 
     const onHandleClick = () => {
         setTimeout(() => {
             setShowModal(true)
-        }, 1000);
-
-
-
-    }
+        }, 1000)
+    };
 
 
 
