@@ -66,14 +66,14 @@ const NavBar = () => {
                                                 className="btn btn-outline-light"> Registrese </button>
                                         </Link>
                                         :
+                                        <button class="btn btn-success">{user?.email}</button>
 
-                                        <p>{user?.email}</p>
 
                                     }
                                 </li>
                                 <li className="nav-item me-md-1">
-                               { user ?
-                                    
+                                    {user ?
+
                                         <button
                                             type="button"
                                             onClick={logout}
@@ -86,10 +86,10 @@ const NavBar = () => {
                                                 type="button"
                                                 className="btn btn-outline-light"> Login </button>
                                         </Link>
-                                
-                                }
 
-                                    </li>
+                                    }
+
+                                </li>
 
 
                             </ul>

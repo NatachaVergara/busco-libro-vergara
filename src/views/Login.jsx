@@ -6,10 +6,6 @@ import { auth } from '../service/fireBaseConfig'
 const Login = () => {
     const [loginEmail, setLoginEmail] = useState('')
     const [loginPassword, setLoginPassword] = useState('')
-
-
-
-
     const noValidate =
         !(loginEmail.length &&
             loginPassword.length > 0
@@ -25,7 +21,7 @@ const Login = () => {
             alert(`Ya se encuentra en su cuenta`)
 
         } catch (error) {
-            console.log(error.message)
+           alert(error.message)
         }
 
     }
@@ -68,6 +64,7 @@ const Login = () => {
 
 
             <Link to="/register" className="mt-3">¿No tiene cuenta?</Link>
+            <Link to="/resetPassword" className="mt-3">¿No recuerda su contraseña?</Link>
 
 
         </form>

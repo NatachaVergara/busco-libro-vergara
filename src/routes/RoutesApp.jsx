@@ -7,6 +7,7 @@ import ItemDetailContainer from '../components/ItemDetailContainer/ItemDetailCon
 import ItemListContainer from '../components/ItemListContainer/ItemListContainer';
 import Login from '../views/Login';
 import Register from '../views/Register';
+import ResetPassword from '../views/ResetPassword';
 
 
 
@@ -23,6 +24,7 @@ const RoutesApp = () => {
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/resetPassword" element={<ResetPassword />} />
         </Routes>
     )
 }
