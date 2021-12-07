@@ -31,13 +31,12 @@
 
 
 
-## :bulb: El proyecto consiste en un e-commerce para la venta de libros.
+## :bulb: El proyecto esta basado en un e-commerce de Libros.
 <br/>
-La idea de mi proyecto se basó en una necesidad de crear una aplicación donde pueda tener un cátalogo propio de todos mis libros y poder venderlos sin la obligación a depender de una aplicación externa en la cual deba dejar parte de mis ganancias.  <br/>
-Actualmente un usuario ya se puede registrar, logear y hasta recuperar su contraseña en caso de perderla, el usuario para poder terminar la compra si o si tiene que tener una cuenta creada y estar logueado y cuando la app este terminada va a poder realizar el pago dentro de Busco Libro app. <br/>
-También contará con una sección para el administrador, donde podra el mismo administrar completamente la carga de productos. <br/>
-Este proyecto una vez terminado, el interés principal será poder ofrecerlos a pequeñas o medianas librerias.
-
+La idea de mi proyecto se basó en una necesidad de crear un sitio donde pueda tener un catálogo propio de todos mis libros y poder venderlos sin la obligación a depender de una aplicación externa en la cual deba dejar parte de mis ganancias.
+Actualmente un usuario puede registrarse, logearse y hasta recuperar su contraseña en caso de perderla, para poder terminar la compra el usuario tiene que tener una cuenta creada y estar logueado. Cuando la app este terminada va a poder realizar el pago dentro de Busco Libro app.
+También contará con una sección para el administrador, donde podrá el mismo administrar completamente la carga de productos.
+Una vez terminado el proyecto, el interés principal será poder ofrecerlos a pequeñas o medianas Pymes.
  <br/>
  <br/>
 
