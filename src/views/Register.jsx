@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import { auth } from '../service/fireBaseConfig'
 import { Link } from 'react-router-dom'
 import ModalRegisterLogin from '../components/Modal/ModalRegisterLogin'
+import  createUser  from '../utils/createUser'
 
 
 
@@ -11,27 +11,16 @@ const Register = () => {
     const [passwordVald, setPasswordVald] = useState('')
     const [showModal, setShowModal] = useState(false)
 
-    const register = async (e) => {
-        try {
-            e.preventDefault()
-            await auth.createUserWithEmailAndPassword(registerEmail, registerPassword)
-            
-            setTimeout(() => {
-                setShowModal(true)
-            }, 1000);
-
-        } catch (error) {
-            e.preventDefault()
-            alert(error.message)
-        }
-
+    const register = (e) => {
+        e.preventDefault()
+        createUser(registerEmail, registerPassword, setShowModal )
     }
 
     const handleHide = () => {
         setShowModal(false)
 
     }
-    
+
     const noValidate =
         !(registerEmail.length &&
             registerPassword.length &&

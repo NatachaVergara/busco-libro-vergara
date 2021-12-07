@@ -9,7 +9,7 @@ const postOrder = (order, setOrderId, cartList) => {
     orders.add(order)
         .then((res) => { setOrderId(res.id) })
         .catch(err => console.log(err))
-    //.finally(() => setLoading(false))
+    
 
 
     

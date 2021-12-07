@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import ModalRegisterLogin from '../components/Modal/ModalRegisterLogin'
-import { auth } from '../service/fireBaseConfig'
+import loginUser from "../utils/loginUser"
+
 
 
 const Login = () => {
@@ -9,26 +10,16 @@ const Login = () => {
     const [loginPassword, setLoginPassword] = useState('')
     const [showModal, setShowModal] = useState(false)
 
+
     const noValidate =
         !(loginEmail.length &&
             loginPassword.length > 0
 
         )
 
-    const login = async (e) => {
-
-        try {
-            e.preventDefault()
-            await auth.signInWithEmailAndPassword(loginEmail, loginPassword)
-
-            setTimeout(() => {
-                setShowModal(true)
-            }, 1000);
-
-        } catch (error) {
-            alert(error.message)
-        }
-
+    const login = (e) => {
+        e.preventDefault()
+        loginUser(loginEmail, loginPassword, setShowModal)
     }
 
 
@@ -70,12 +61,15 @@ const Login = () => {
                 <Link to="/register" className="mt-3">¿No tiene cuenta?</Link>
                 <Link to="/resetPassword" className="mt-3">¿No recuerda su contraseña?</Link>
             </form>
+
+
             <ModalRegisterLogin
                 show={showModal}
                 onHide={handleHide}
-                message=" Gracias por volver a confiar en Busco Libro app"
+                message=" Gracias por volver a confiar en Busco Libro app" />
 
-            />
+
+
         </>
 
 
