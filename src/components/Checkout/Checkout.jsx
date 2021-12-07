@@ -86,7 +86,7 @@ const Checkout = () => {
                     <div className="row d-flex align-items-center mb-3">
                         <div>
                             {cartList.map(item =>
-                                <img src={item.pictureUrl} alt="img" className="col-1 me-1 mt-1 mb-2 rounded" style={{ width: "150px", height: "150px" }} />)
+                                <img src={item.pictureUrl} key={item.id} alt="img" className="col-1 me-1 mt-1 mb-2 rounded" style={{ width: "150px", height: "150px" }} />)
                             }
                             <h6 className="card-subtitle mb-2 text-muted">Productos en total {cantItem()} </h6>
                             <p className="card-text">La suma total de su orden es : ${totalPrice()}  </p>

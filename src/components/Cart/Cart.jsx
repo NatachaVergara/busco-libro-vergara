@@ -7,7 +7,7 @@ import CartEmpty from './CartEmpty'
 
 const Cart = () => {
     const { cartList, eraseCart, eraseItem } = useCartContext()
-    
+
 
 
     return (
@@ -46,30 +46,35 @@ const Cart = () => {
             }
             {
                 cartList.length === 0 ? null :
-                    <div className="d-flex  flex-column ms-5 flex-md-row justify-content-center ">
-                        <div className="me-md-3 mb-2">
-                        <button type="button"
-                            className="btn btn-outline-secondary  "
-                            onClick={eraseCart}> Eliminar carrito
-                        </button>
-                        </div>
-                        <div className=" me-md-3 mb-2">
-                        <Link to='/'
-                            className="card-link">
-                            <button
-                                type="button"
-                                className="btn btn-outline-success">  Seguir comprando
-                            </button>
+
+
+
+
+                    <div className="container">
+                        <div className="d-flex justify-content-sm-center  container">
+                            <Link to='/'
+                                className="card-link">
+                                <button
+                                    type="button"
+                                    className="btn btn-outline-success">  Seguir comprando
+                                </button>
+                            </Link>
+                            <Link to='/checkout' className="card-link" >
+                                <button
+                                    type="button"
+                                    className="btn btn-outline-success btnFinalizar">  Finalizar Compra
+                                </button>
                             </Link>
                         </div>
-                        <div className="me-md-3">
-                        <Link to='/checkout' className="card-link" >
-                            <button
-                                type="button"
-                                className="btn btn-outline-success btnFinalizar">  Finalizar Compra
+
+                        <div className="d-flex  ms-5 mt-3 ">
+                            <button type="button"
+                                className=" btn btn-outline-secondary  "
+                                onClick={eraseCart}> Eliminar carrito
                             </button>
-                            </Link>
                         </div>
+
+
                     </div>
             }
 
