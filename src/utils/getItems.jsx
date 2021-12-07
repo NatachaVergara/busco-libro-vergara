@@ -1,6 +1,6 @@
-
 import { getFirestore } from '../service/fireBaseConfig'
-const getItems = (categoryId, setItems, setLoading) => { 
+
+const getItems = (categoryId, setItems, setLoading) => {
         const db = getFirestore()
         const dbGetQueary = categoryId ? db.collection('items').where('categoryId', '==', categoryId) : db.collection('items')
        

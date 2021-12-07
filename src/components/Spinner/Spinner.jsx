@@ -1,7 +1,7 @@
 
 import '../../index.css'
 
-const Spiner = ({ mensaje }) => {
+const Spiner = () => {
 
     return (
         <div className="spinner container">  📚

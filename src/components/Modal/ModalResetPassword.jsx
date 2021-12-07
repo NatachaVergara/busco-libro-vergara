@@ -9,7 +9,7 @@ const ModalResetPassword = (props) => {
         <div>
             <Modal {...props} >
                 <Modal.Header closeButton>
-                    <Modal.Title>Revise su correo electronico</Modal.Title>
+                    <Modal.Title>Revise su correo electrónico</Modal.Title>
                 </Modal.Header>
                 <Modal.Body
                     className="text-success fs-5 bg-dark">
@@ -17,7 +17,11 @@ const ModalResetPassword = (props) => {
                     Gracias por confiar en nosotros.
                 </Modal.Body>
                 <Modal.Footer>
-                   <Link to={'/login'}> <Button variant="secondary" onClick={props.onHide}>Close</Button></Link>
+                    <Link to={'/login'}>
+                        <Button variant="secondary" onClick={props.onHide}>
+                            Close
+                        </Button>
+                    </Link>
                 </Modal.Footer>
             </Modal>
 

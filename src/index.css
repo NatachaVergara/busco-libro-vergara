@@ -122,6 +122,35 @@ code {
 }
 
 
+
+footer{
+    width: 90%;    
+    margin-top: 5vh;
+    height: auto;
+   
+    
+
+}
+footer > p{
+   margin: 10px;
+   color:white;
+   text-align:center;
+   font-size: 1.5rem;
+   
+   
+}
+
+
+@media  (max-width: 400px){
+   footer{
+        margin-top: 20vh;
+   } 
+    footer > p{
+   font-size: 1rem;
+   
+}
+}
+
 @media (max-width: 641px){
 
 .spinner::before{

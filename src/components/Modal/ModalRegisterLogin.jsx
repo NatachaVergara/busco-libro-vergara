@@ -12,8 +12,8 @@ const ModalRegisterLogin = (props) => {
                     <Modal.Title>Bienvenido/a</Modal.Title>
                 </Modal.Header>
                 <Modal.Body
-                    className="text-success fs-5 bg-dark">                    
-                   {props.message}
+                    className="text-success fs-5 bg-dark">
+                    {props.message}
                 </Modal.Body>
                 <Modal.Footer>
                     <Link to={'/'}>

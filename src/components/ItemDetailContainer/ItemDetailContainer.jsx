@@ -11,17 +11,16 @@ const ItemDetailContainer = () => {
 
     const { id } = useParams()
 
-    useEffect(() => {      
-        getItem(id, setItem, setLoading)        
+    useEffect(() => {
+        getItem(id, setItem, setLoading)
     }, [id])
 
-    
+
 
     return (
         <div>
             {loading ?
-                <Spiner mensaje="Estamos trayendo su libro....." /> :
-                <ItemDetail item={item} key={id} />
+                <Spiner /> :  <ItemDetail item={item} key={id} />
             }
         </div>
     )

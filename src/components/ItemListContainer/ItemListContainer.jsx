@@ -18,7 +18,7 @@ const ItemListContainer = () => {
 
     return (
         <div>
-            {loading ? <Spiner mensaje="Buscando libros....." /> : <ItemList items={items} />}
+            {loading ? <Spiner  /> : <ItemList items={items} />}
         </div>
     )
 }
