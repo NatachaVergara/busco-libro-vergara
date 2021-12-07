@@ -87,3 +87,49 @@ code {
         0 0 2.5em 2em var(--glow-spread-color),
         inset 0 0 .5em .25em var(--glow-color);
 }
+
+/*componente spinner se usa en getItems y getItem*/
+.spinner{
+  width:30%;  
+  position: relative;
+  margin: 15% auto;
+  text-align: center;
+  font-size: 2rem;  
+}
+
+.spinner::before{
+        
+    border: solid 3px #eee;
+    border-bottom-color: #EF6565;
+    border-radius: 50%;
+    content: "";
+    height: 10rem;
+    width: 10rem;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    animation: 2s linear infinite spinner;
+}
+
+@keyframes spinner {
+    0% {
+        transform: translate3d(-50%, -50%, 0) rotate(0deg);
+    }
+    100% {
+         transform: translate3d(-50%, -50%, 0) rotate(360deg);
+    }
+}
+
+
+@media (max-width: 641px){
+
+.spinner::before{
+  left: 50%;
+    height: 5rem;
+    width: 5rem;
+   
+}
+
+
+}

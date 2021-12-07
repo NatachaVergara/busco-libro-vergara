@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import ModalRegisterLogin from '../components/Modal/ModalRegisterLogin'
+
 import loginUser from "../utils/loginUser"
 
 
@@ -40,7 +41,7 @@ const Login = () => {
                         placeholder="Enter email"
                         onChange={(e) => { setLoginEmail(e.target.value) }}
                     />
-                    <small id="emailHelp" className="form-text text-muted">Nunca compartiremos su email</small>
+                    <small id="emailHelp" className="form-text text-muted">Nunca compartiremos su información</small>
                 </div>
                 <div className="form-group text-center">
                     <label className="form-label mt-4">Ingrese una contraseña</label>
