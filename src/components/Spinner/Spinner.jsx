@@ -4,7 +4,8 @@ import '../../index.css'
 const Spiner = ({ mensaje }) => {
 
     return (
-        <div className="spinner container">  📚 </div>
+        <div className="spinner container">  📚
+         </div>
        
     )
 }
