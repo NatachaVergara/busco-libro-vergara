@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import ModalResetPassword from '../components/Modal/ModalResetPassword'
-import { auth } from '../service/fireBaseConfig'
+import resetPass from '../utils/resetPass'
 
 
 const ResetPassword = () => {
@@ -9,16 +9,8 @@ const ResetPassword = () => {
     const [showModal, setShowModal] = useState(false)
 
 
-    const resetPassword = (e) => {
-        e.preventDefault();
-        auth.sendPasswordResetEmail(loginEmail)
-
-
-        setTimeout(() => {
-            setShowModal(true)
-        }, 1000);
-
-
+    const resetPassword = (e) => {      
+        resetPass(loginEmail, setShowModal)
     }
 
     const handleHide = () => {
@@ -46,12 +38,13 @@ const ResetPassword = () => {
                     Resetear contraseña
                 </button>
 
+                <Link to={'/login'} className="text-decoration-none">
                 <button type="button"
-                    className="btn btn-outline-success text-center mt-2">
-                    <Link to={'/login'} className="text-decoration-none">
-                        Volver a login
-                    </Link>
+                    className="btn btn-outline-success text-center mt-2">                    
+                        Volver a login                  
                 </button>
+                </Link>
+                <h6 className="mx-3  mt-3 text-center">Si tiene problemas para resetear su contraseña envíe un email a ntchvergara@gmail.com</h6>
 
             </div>
             <ModalResetPassword

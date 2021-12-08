@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 
 const ItemCount = ({ stocks, initial, onAdd }) => {
-    const [count, setCount] = useState(0)
+    const [count, setCount] = useState(initial)
 
     const increase = () => {
         if (count < stocks) {
@@ -28,7 +28,7 @@ const ItemCount = ({ stocks, initial, onAdd }) => {
                     type="button"
                     className="btn btn-primary btn-sm"
                     onClick={increase} disabled={count === stocks} >+</button>
-                <h2 className="mx-2">{count}</h2>
+                <h2 className="mx-2">{stocks === 0 ? '0' : count}</h2>
                 <button
                     type="button"
                     className="btn btn-primary btn-sm"
