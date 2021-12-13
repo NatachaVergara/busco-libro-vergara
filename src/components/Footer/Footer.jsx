@@ -6,6 +6,7 @@ const Footer = () => {
         <footer className="footer">
             <p> App creada en Coderhouse - &copy; Natacha Vergara {new Date().getFullYear()}
             </p>
+            
         </footer>
 
     )

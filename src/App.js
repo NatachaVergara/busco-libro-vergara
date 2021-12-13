@@ -13,6 +13,7 @@ import RoutesApp from "./routes/RoutesApp";
 
 
 
+
 function App() {
   return (
 
@@ -23,6 +24,7 @@ function App() {
           <RoutesApp />
           <Footer />
         </div>
+        
       </BrowserRouter>
     </CartContextProvider>
 

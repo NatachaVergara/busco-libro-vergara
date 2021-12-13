@@ -88,16 +88,16 @@ const NavBar = () => {
                                         </Link>
 
                                     }
-
                                 </li>
-
-
                             </ul>
                             <Link to={'/cart'}
                                 className="mt-1 align-self-center text-decoration-none">
                                 <CartWidget />
                             </Link>
                         </div>
+
+
+
                     </div>
                 </div>
             </nav>

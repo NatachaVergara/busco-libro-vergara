@@ -61,6 +61,7 @@ const Login = () => {
 
                 <Link to="/register" className="mt-3">¿No tiene cuenta?</Link>
                 <Link to="/resetPassword" className="mt-3">¿No recuerda su contraseña?</Link>
+                <Link to="/loginAdmin" className="mt-3">Soy administrador</Link>
                 <h6 className="mx-3  mt-3 text-center">Si tiene problemas para loguearse a su cuenta envíe un email a ntchvergara@gmail.com</h6>
             </form>
 
