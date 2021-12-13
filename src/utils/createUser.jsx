@@ -5,13 +5,18 @@ import { auth } from '../service/fireBaseConfig'
 const createUser = async (registerEmail, registerPassword, setShowModal) => {
 
     try {
-        await auth.createUserWithEmailAndPassword(registerEmail, registerPassword)       
-            setShowModal(true)
-
+        await auth.createUserWithEmailAndPassword(registerEmail, registerPassword)
+        setShowModal(true)
     } catch (error) {
-        console.log(error.message)
-        alert(`Ha ocurrido un error al momento de crear su contraseña.
-        ¿Ha usado ya este mismo email anteriormente?`)
+        switch (error.code) {
+            case "auth/email-already-in-use":
+                alert("Ya tenemos una cuenta registrado con ese mail");
+                break;
+            default:
+                alert("Algo salió mal, intenta recargando la página");
+                break;
+        }
+
     }
 
 
