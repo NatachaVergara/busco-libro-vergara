@@ -2,6 +2,7 @@ import { auth } from '../service/fireBaseConfig'
 
 const loginUser = async (loginEmail, loginPassword, setShowModal) => {
 
+    
     try {
         await auth.signInWithEmailAndPassword(loginEmail, loginPassword)
         setShowModal(true)
