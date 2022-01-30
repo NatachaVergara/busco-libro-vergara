@@ -42,7 +42,7 @@ const ItemCount = ({ stocks, initial, onAdd }) => {
                 type="button"
                 className="btn btn-secondary"
                 onClick={() => onAdd(count)}
-                disabled={count === 0}>Agregar al carrito </button>
+                disabled={count === 0 || stocks === 0}>Agregar al carrito </button>
             <Link to='/'
                 type="button"
                 className="btn btn-secondary mt-2">Volver al catálogo
