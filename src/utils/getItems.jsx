@@ -10,4 +10,5 @@ const getItems = (categoryId, setItems, setLoading) => {
         .finally(() => setLoading(false))
 }
 
+
 export default getItems
